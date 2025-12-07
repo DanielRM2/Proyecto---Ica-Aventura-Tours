@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Viajes a medida | Ica Aventura Tours</title>
+  <link rel="stylesheet" href="estilos/css/main.css">
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="main-nav" role="navigation" aria-label="Barra de navegación principal">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="tours.html">Tours</a></li>
+      <li><a href="destinos.html">Destinos</a></li>
+      <li><a href="viajes.html" class="active">Viajes a medida</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+      &#9776
+    </button>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <img class="banner-bg" src="https://alasperuanas.com/wp-content/uploads/2024/09/candelabro-pri.jpg" alt="Banner principal" />
+    <div class="logo">
+      <img src="https://icatravelperu.com/wp-content/uploads/2021/11/logo-ica-peru-travel.webp" alt="Paracas Explorer Logo" />
+      ICA AVENTURA TOURS S.A.C
+    </div>
+    <div class="header-lang-select">
+      <select aria-label="Seleccione idioma">
+        <option selected>Español</option>
+        <option>English</option>
+        <option>Português</option>
+      </select>
+    </div>
+    <div class="hero-text">
+      <h1>Viajes a medida</h1>
+      <p>Diseña tu propia aventura y vive el Perú a tu manera, con itinerarios creados según tus intereses y estilo de viaje.</p>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="viajes-medida">
+    <!-- Intro -->
+    <section class="intro">
+      <h2>Tu viaje, a tu manera</h2>
+      <p>
+        En <strong>Ica Aventura Tours</strong> personalizamos cada detalle de tu viaje:
+        elige los destinos, las actividades, el tipo de alojamiento y nosotros lo
+        convertimos en una experiencia única e inolvidable.
+      </p>
+    </section>
+
+    <!-- Opciones de personalización -->
+    <section class="personalizacion">
+      <h2>¿Qué puedes personalizar?</h2>
+      <div class="grid-opciones">
+        <article>
+          <span class="icon">🗺️</span>
+          <h3>Destinos</h3>
+          <p>Explora Paracas, Cusco, Arequipa, Puno, Lima, Nazca e Ica según tus gustos.</p>
+        </article>
+        <article>
+          <span class="icon">🏨</span>
+          <h3>Alojamiento</h3>
+          <p>Hoteles 3, 4 o 5 estrellas, hostales boutique o eco-lodges.</p>
+        </article>
+        <article>
+          <span class="icon">🚐</span>
+          <h3>Transporte</h3>
+          <p>Privado, compartido o de lujo: elige cómo moverte en cada tramo.</p>
+        </article>
+        <article>
+          <span class="icon">🍽️</span>
+          <h3>Gastronomía</h3>
+          <p>Incluye cenas típicas, tours gastronómicos o experiencias gourmet.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="beneficios">
+      <h2>Ventajas de viajar con nosotros</h2>
+      <div class="beneficios-grid">
+        <div class="card">✔️ Asesoría personalizada</div>
+        <div class="card">✔️ Soporte 24/7</div>
+        <div class="card">✔️ Flexibilidad total</div>
+      </div>
+    </section>
+
+    <!-- Proceso -->
+    <section class="proceso">
+      <h2>Así funciona</h2>
+      <div class="pasos">
+        <div class="paso"><span>1</span><p>Cuéntanos tus ideas</p></div>
+        <div class="paso"><span>2</span><p>Recibe tu itinerario</p></div>
+        <div class="paso"><span>3</span><p>Ajustamos juntos</p></div>
+        <div class="paso"><span>4</span><p>Disfruta tu viaje</p></div>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section class="formulario">
+      <h2>Solicita tu viaje personalizado</h2>
+      <form>
+        <label>Nombre completo
+          <input type="text" name="nombre" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+        <label>Teléfono
+          <input type="text" name="telefono">
+        </label>
+        <label>Fecha estimada de viaje
+          <input type="date" name="fecha">
+        </label>
+        <label>Número de personas
+          <input type="number" name="personas" min="1">
+        </label>
+        <label>Intereses / comentarios
+          <textarea name="comentarios"></textarea>
+        </label>
+        <button type="submit">Enviar solicitud</button>
+      </form>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-final">
+      <p>¿Listo para diseñar tu aventura a medida?</p>
+      <a href="contacto.html" class="btn-cta">Comienza ahora</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <!-- ... tu footer original intacto ... -->
+  </footer>
+
+  <script src="funciones/script.js"></script>
+</body>
+</html>

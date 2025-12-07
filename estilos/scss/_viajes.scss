@@ -1,0 +1,286 @@
+.viajes-medida {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.2rem;
+    color: #1e64d4; //  color menú
+    font-size: 1.8rem;
+  }
+
+  p {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* Intro */
+  .intro {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2rem;
+      color: #1e64d4; // color menú
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+  }
+
+  /* Opciones de personalización */
+  .personalizacion {
+    margin-bottom: 3rem;
+
+    .grid-opciones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+
+      article {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-6px);
+        }
+
+        .icon {
+          font-size: 2rem;
+          display: block;
+          margin-bottom: 0.5rem;
+          color: #1e64d4; //  color menú
+        }
+
+        h3 {
+          margin: 0.5rem 0;
+          color: #1e64d4; //  color menú
+        }
+      }
+    }
+  }
+
+  /* Beneficios */
+  .beneficios {
+    margin-bottom: 3rem;
+
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+
+      .card {
+        background: #f8f9fa;
+        border-left: 5px solid #1e64d4; //  color menú
+        padding: 1rem 1.2rem;
+        border-radius: 8px;
+        font-weight: bold;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+        color: #1e64d4; //  color menú
+      }
+    }
+  }
+
+  /* Proceso */
+  .proceso {
+    margin-bottom: 3rem;
+
+    .pasos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+
+      .paso {
+        flex: 1 1 200px;
+        background: #fff;
+        padding: 1.2rem;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+
+        span {
+          display: block;
+          font-size: 1.2rem;
+          background: #1e64d4; //  color menú
+          color: #fff;
+          width: 36px;
+          height: 36px;
+          margin: 0 auto 0.8rem;
+          border-radius: 50%;
+          line-height: 36px;
+          font-weight: bold;
+        }
+
+        p {
+          margin: 0;
+          font-weight: 500;
+          color: #1e64d4; // color menú
+        }
+      }
+    }
+  }
+
+  /* Formulario */
+  .formulario {
+    margin-bottom: 3rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #1e64d4; // color menú
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        color: #1e64d4; // color menú
+
+        input,
+        textarea {
+          margin-top: 0.4rem;
+          padding: 0.7rem;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 1rem;
+
+          &:focus {
+            outline: none;
+            border-color: #1e64d4; // color menú
+            box-shadow: 0 0 0 2px rgba(30, 100, 212, 0.2);
+          }
+        }
+
+        textarea {
+          min-height: 100px;
+          resize: vertical;
+        }
+      }
+
+      button {
+        background: #1e64d4; // color menú
+        color: white;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: darken(#1e64d4, 10%);
+        }
+      }
+    }
+  }
+
+  /* CTA final */
+  .cta-final {
+    text-align: center;
+    margin-top: 2rem;
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #1e64d4; // color menú
+    }
+
+    .btn-cta {
+      display: inline-block;
+      padding: 0.9rem 1.8rem;
+      background: #1e64d4; // color menú
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: darken(#1e64d4, 10%);
+      }
+    }
+  }
+
+  /* ---------------------
+     RESPONSIVE
+  --------------------- */
+
+  /* Tablets */
+  @media (max-width: 992px) {
+    padding: 1.5rem;
+
+    .intro h2 {
+      font-size: 1.7rem;
+    }
+
+    .personalizacion .grid-opciones {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .beneficios .beneficios-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Móviles */
+  @media (max-width: 600px) {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .intro h2 {
+      font-size: 1.4rem;
+    }
+
+    .intro p {
+      font-size: 1rem;
+    }
+
+    .personalizacion .grid-opciones {
+      grid-template-columns: 1fr;
+    }
+
+    .beneficios .beneficios-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .proceso .pasos {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .formulario {
+      padding: 1.2rem;
+    }
+
+    .cta-final p {
+      font-size: 1.1rem;
+    }
+
+    .cta-final .btn-cta {
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+}

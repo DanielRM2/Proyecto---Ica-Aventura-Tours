@@ -1,0 +1,21 @@
+@use 'variables' as v;
+/* Estilo del cuerpo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: v.$font-family;
+    color: v.$text-color;
+    background: #f1f6f1;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,37 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+/* Estilos para el selector de idioma */
+.header-lang-select {
+  position: absolute !important;
+  right: 2rem !important;
+  top: 1.2rem !important;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  margin: 0 !important;
+  width: auto !important;
+
+  @include m.respond-to('tableta') {
+    right: 5rem !important;
+  }
+}
+
+.header-lang-select select {
+  padding: 0.35rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #fff;
+  color: v.$secundary-color;
+  border: 1.5px solid v.$secundary-color;
+  background:white;
+  font-weight: 600;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
+}
+.header-lang-select select:focus {
+  outline: 2px solid v.$secundary-color;;
+  box-shadow: 0 0 0 2px v.$secundary-color;;
+}

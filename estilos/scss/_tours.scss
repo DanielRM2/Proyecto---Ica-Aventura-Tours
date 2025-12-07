@@ -1,0 +1,176 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'sass:color';
+
+/* Seccion de Tours */
+.tours-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.tours-filter-select {
+  min-width: 160px;
+  max-width: 220px;
+}
+nav[aria-label="Paginación de tours"] {
+  text-align: center;
+  margin-top: 1.2rem;
+}
+.pagination-range {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: v.$text-color-secondary;
+}
+.footer-title-margin {
+  margin-top: 1rem;
+}
+
+/* PAGINACIÓN */
+.modern-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+.pagination-btn {
+  background-color: v.$primary-color;
+  color: v.$light-color;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(30, 100, 212, 0.15);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.pagination-btn:disabled {
+  background: color.adjust(v.$primary-color, $lightness: 40%);
+  color: color.adjust(v.$text-color, $lightness: 40%);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.pagination-btn.active, .pagination-btn.page.active {
+  background: v.$primary-color;
+  color: v.$light-color;
+  transform: scale(1.08);
+  box-shadow: 0 4px 16px rgba(13, 186, 166, 0.25);
+}
+.pagination-btn.page {
+  min-width: 44px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 0.6rem 0.9rem;
+  background: color.adjust(v.$primary-color, $lightness: 30%);
+  color: v.$text-color;
+  box-shadow: 0 2px 8px rgba(30, 100, 212, 0.1);
+  margin: 0 0.15rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.pagination-btn.page:hover:not(.active) {
+  background: color.adjust(v.$secundary-color, $lightness: -10%);
+  color: v.$light-color;
+  transform: scale(1.05);
+}
+.pagination-btn.prev, .pagination-btn.next {
+  font-size: 1.1rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  background: v.$primary-color-dark;
+  color: v.$light-color;
+  box-shadow: 0 2px 8px rgba(20, 78, 166, 0.15);
+}
+.pagination-btn.prev:disabled, .pagination-btn.next:disabled {
+  background: color.adjust(v.$primary-color-dark, $lightness: 40%);
+  color: color.adjust(v.$text-color, $lightness: 40%);
+  cursor: not-allowed;
+}
+.pagination-range {
+  text-align: center;
+  font-size: 1rem;
+  color: v.$text-color-secondary;
+  margin-top: 0.5rem;
+}
+
+@include m.respond-to('tableta') {
+  .tours-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .tours-hero {
+    height: 60vh;
+    min-height: 320px;
+  }
+}
+
+@include m.respond-to('movil') {
+  .tours-list {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .pagination-btn {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+.tours-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.tour-card {
+  background: v.$light-color;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.tour-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(30, 198, 179, 0.18);
+}
+.tour-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.tour-content {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tour-content h3 {
+  color: v.$primary-color;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.tour-price strong {
+  color: v.$secundary-color;
+}
+.btn-reserve {
+  background: v.$primary-color;
+  color: v.$light-color;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-reserve:hover {
+  background: v.$primary-color-dark;
+  color: v.$light-color;
+}
