@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ica Aventura Tours | Agencia de viajes en Ica, Perú</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/webp" href="https://icatravelperu.com/wp-content/uploads/2021/11/logo-ica-peru-travel.webp">
     <link rel="stylesheet" href="estilos/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
+<div id="contenido-principal">
 
     <!-- BARRA DE NAVEGACIÓN -->
     <nav class="main-nav" role="navigation" aria-label="Barra de navegación principal">
@@ -18,8 +20,8 @@
             <li><a href="viajes.html">Viajes a medida</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
         </ul>
-        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
-            &#9776
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+            <i class="fas fa-bars"></i>
         </button>
     </nav>
 
@@ -46,193 +48,211 @@
     </header>
 
     <!-- Sección Destinos -->
-    <section class="destinos-section">
+    <section class="seccion-destinos seccion-aparecer">
         <h2><i class="fas fa-map-marker-alt"></i> Nuestros Destinos</h2>
-        <div class="destinos-carousel" aria-label="Carrusel de destinos">
-            <button class="carousel-arrow left" aria-label="Anterior Destino">&#10094;</button>
-            <div class="destinos-carousel-track" role="list">
-                <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Paracas">
+        <div class="carrusel-destinos" aria-label="Carrusel de destinos">
+            <button class="flecha-carrusel izquierda" aria-label="Anterior Destino">&#10094;</button>
+            <div class="carrusel-destinos-pista" role="list">
+                <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Paracas">
                     <img src="https://atoqhoteles.com/wp-content/uploads/2025/04/atoq-hoteles-blog-explore-paracas-playa-de-la-mina.png" alt="Paracas" />
                     <h3>Paracas</h3>
                 </div>
-                <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Lima">
+                <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Lima">
                     <img src="https://www.caminosalkantay.com/blog/wp-content/uploads/2024/11/miraflores-lima-city-in-front-the-ocean-1024x767-1.jpg" alt="Lima"/>
                     <h3>Lima</h3>
                 </div>
-                <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Ica">
+                <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Ica">
                     <img src="https://www.peru.travel/Contenido/Destino/Imagen/es/5/1.2/Principal/SouthAmericaPeru2017_1010_180704-5912_AGP_HDR-_2_-_1_.home%20_7_.jpg" alt="Ica" />
                     <h3>Ica</h3>
                 </div>
-                <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Arequipa">
+                <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Arequipa">
                     <img src="https://www.viajespeedy.com/wp-content/uploads/2024/08/city-tour-arequipa-1.jpg" alt="Arequipa" />
                     <h3>Arequipa</h3>
                 </div>
-                <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Nazca">
+                <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Nazca">
                     <img src="https://files.pucp.education/puntoedu/wp-content/uploads/2025/06/04172152/web-1920x1080-lineas-de-nazca.jpg" alt="Nazca" />
                     <h3>Nazca</h3>
                 </div>
-                    <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Cusco">
+                    <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Cusco">
                         <img src="https://www.travelandes.com/img/GalleryContent/111791/cusco1.jpg" alt="Cusco" />
                         <h3>Cusco</h3>
                     </div>
-                    <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Puno">
+                    <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Puno">
                         <img src="https://peru.info/archivos/publicacion/120-imagen-179561372018.jpg" alt="Puno" />
                         <h3>Puno</h3>
                     </div>
-                    <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Trujillo">
+                    <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Trujillo">
                         <img src="https://denomades-blog.imgix.net/blog/wp-content/uploads/2020/09/19163849/shutterstock_217920055-1.jpg?auto=compress%2Cformat&ixlib=php-3.3.1" alt="Trujillo" />
                         <h3>Trujillo</h3>
                     </div>
-                    <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Piura">
+                    <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Piura">
                         <img src="https://www.turiweb.pe/wp-content/uploads/2020/10/piura-playa-201020.jpg" alt="Piura" />
                         <h3>Piura</h3>
                     </div>
             </div>
-            <button class="carousel-arrow right" aria-label="Siguiente Destino">&#10095;</button>
+            <button class="flecha-carrusel derecha" aria-label="Siguiente Destino">&#10095;</button>
         </div>
     </section>
 
     <!-- Tours y Paquetes -->
-    <section class="tours-section container" aria-label="Tours y Paquetes">
+    <section class="tours-section container seccion-aparecer" aria-label="Tours y Paquetes">
         <div class="tours-header">
             <span id="tituloTours">🗺️ Tours y Paquetes</span>
             <a href="tours.html" style="color:var(--primary-color); font-weight:700; padding-left:0.5rem;">/ Ver todos</a>
         </div>
         <div class="tours-list">
 
-            <article class="tour-card" aria-label="Tour Islas Ballestas">
-                <img src="https://islasballestas.net/wp-content/uploads/2023/09/islas-ballestas-paracas-1.jpg" alt="Tour Islas Ballestas" />
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transition-shadow duration-300 transform hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(30,198,179,0.18)]" aria-label="Tour Islas Ballestas">
+                <img class="w-full h-[220px] object-cover" src="https://islasballestas.net/wp-content/uploads/2023/09/islas-ballestas-paracas-1.jpg" alt="Tour Islas Ballestas" />
                 <div class="tour-content">
                     <h3>Tour Islas Ballestas</h3>
-                    <div class="tour-subtitle">Islas Ballestas - Paracas</div>
-                    <div class="tour-price"><del>$25.00</del> <strong>$15.00</strong></div>
-                    <div class="tour-details">
-                        Duración: <b>2 Horas</b><br />
-                        Nivel de actividad: <b>Bajo</b><br />
-                        Tamaño del Grupo: <b>Grande</b>
+                    <div class="text-[#999] text-[0.88rem] mb-[0.7rem]">Islas Ballestas - Paracas</div>
+                    <div class="font-black mb-2 text-[1.15rem] text-[#1e64d4]"><del class="text-[#999] mr-2">$25.00</del> <strong class="text-[#0dbaa6]">$15.00</strong></div>
+                    <div class="text-[0.95rem] mb-[0.8rem]">
+                        Duración: <b class="font-black">2 Horas</b><br />
+                        Nivel de actividad: <b class="font-black">Bajo</b><br />
+                        Tamaño del Grupo: <b class="font-black">Grande</b>
                     </div>
-                    <button class="btn-reserve" type="button">Reserve ahora</button>
+                    <button class="bg-[#1e64d4] text-white rounded-[6px] py-[0.6rem] px-[1.2rem] font-bold mt-4 cursor-pointer transition-colors duration-200 hover:bg-[#144ea6] hover:text-white btn-reserve" type="button">
+                        Reserve ahora
+                    </button>
                 </div>
             </article>
 
-            <article class="tour-card" aria-label="Tour Cusco Clásico 8 Días 7 Noches">
-                <img src="https://cuscoperu.b-cdn.net/wp-content/uploads/2023/07/tour-a-Machu-Picchu-de-1-dia-1000x650.webp" alt="Tour Cusco Clásico" />
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transition-shadow duration-300 transform hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(30,198,179,0.18)]" aria-label="Tour Cusco Clásico 8 Días 7 Noches">
+                <img class="w-full h-[220px] object-cover" src="https://cuscoperu.b-cdn.net/wp-content/uploads/2023/07/tour-a-Machu-Picchu-de-1-dia-1000x650.webp" alt="Tour Cusco Clásico" />
                 <div class="tour-content">
                     <h3>Cusco Clásico 8 Días 7 Noches</h3>
-                    <div class="tour-price">Desde: <strong>$995.00</strong></div>
-                    <div class="tour-details">
-                        Duración: <b>8 Días 7 Noches</b><br />
-                        Nivel de actividad: <b>Alta</b><br />
-                        Tamaño del Grupo: <b>Mediano</b>
+                    <div class="font-black mb-2 text-[1.15rem] text-[#1e64d4]">Desde: <strong class="text-[#0dbaa6]">$995.00</strong></div>
+                    <div class="text-[0.95rem] mb-[0.8rem]">
+                        Duración: <b class="font-black">8 Días 7 Noches</b><br />
+                        Nivel de actividad: <b class="font-black">Alta</b><br />
+                        Tamaño del Grupo: <b class="font-black">Mediano</b>
                     </div>
-                    <button class="btn-reserve" type="button">Reserve ahora</button>
+                    <button class="bg-[#1e64d4] text-white rounded-[6px] py-[0.6rem] px-[1.2rem] font-bold mt-4 cursor-pointer transition-colors duration-200 hover:bg-[#144ea6] hover:text-white btn-reserve" type="button">
+                        Reserve ahora
+                    </button>
                 </div>
             </article>
 
-            <article class="tour-card" aria-label="Tour Paracas Ica Full Day">
-                <img src="https://perutravelexpress.com/wp-content/uploads/2019/06/ISLA-BALLESTAS-Y-RESERVA-DE-PARACAS-750x410.jpg" alt="Tour Paracas Ica Full Day" />
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transition-shadow duration-300 transform hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(30,198,179,0.18)]" aria-label="Tour Paracas Ica Full Day">
+                <img class="w-full h-[220px] object-cover" src="https://perutravelexpress.com/wp-content/uploads/2019/06/ISLA-BALLESTAS-Y-RESERVA-DE-PARACAS-750x410.jpg" alt="Tour Paracas Ica Full Day" />
                 <div class="tour-content">
                     <h3>Paracas-Pisco Full Day con salida desde Ica</h3>
-                    <div class="tour-subtitle">Lima - Paracas - Huacachina</div>
-                    <div class="tour-price">Desde: <strong>$135.00</strong></div>
-                    <div class="tour-details">
-                        Duración: 1 día<br />
-                        Nivel de actividad: Media<br />
-                        Tamaño del Grupo: Mediano
+                    <div class="text-[#999] text-[0.88rem] mb-[0.7rem]">Lima - Paracas - Huacachina</div>
+                    <div class="font-black mb-2 text-[1.15rem] text-[#1e64d4]">Desde: <strong class="text-[#0dbaa6]">$135.00</strong></div>
+                    <div class="text-[0.95rem] mb-[0.8rem]">
+                        Duración: <b class="font-black">1 día</b><br />
+                        Nivel de actividad: <b class="font-black">Media</b><br />
+                        Tamaño del Grupo: <b class="font-black">Mediano</b>
                     </div>
-                    <button class="btn-reserve" type="button">Reserve ahora</button>
+                    <button class="bg-[#1e64d4] text-white rounded-[6px] py-[0.6rem] px-[1.2rem] font-bold mt-4 cursor-pointer transition-colors duration-200 hover:bg-[#144ea6] hover:text-white btn-reserve" type="button">
+                        Reserve ahora
+                    </button>
                 </div>
             </article>
 
-            <article class="tour-card" aria-label="Tour Valle Sagrado">
-                <img src="https://www.libertyperutravel.com/wp-content/uploads/2023/10/tour-valle-sagrado-de-los-incas-peru.jpg" alt="Tour Valle Sagrado" />
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transition-shadow duration-300 transform hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(30,198,179,0.18)]" aria-label="Tour Valle Sagrado">
+                <img class="w-full h-[220px] object-cover" src="https://www.libertyperutravel.com/wp-content/uploads/2023/10/tour-valle-sagrado-de-los-incas-peru.jpg" alt="Tour Valle Sagrado" />
                 <div class="tour-content">
                     <h3>Tour Valle Sagrado</h3>
-                    <div class="tour-subtitle">Cusco - Valle Sagrado</div>
-                    <div class="tour-price">Desde: <strong>$120.00</strong></div>
-                    <div class="tour-details">
-                        Duración: <b>1 Día</b><br />
-                        Nivel de actividad: <b>Media</b><br />
-                        Tamaño del Grupo: <b>Pequeño</b>
+                    <div class="text-[#999] text-[0.88rem] mb-[0.7rem]">Cusco - Valle Sagrado</div>
+                    <div class="font-black mb-2 text-[1.15rem] text-[#1e64d4]">Desde: <strong class="text-[#0dbaa6]">$120.00</strong></div>
+                    <div class="text-[0.95rem] mb-[0.8rem]">
+                        Duración: <b class="font-black">1 Día</b><br />
+                        Nivel de actividad: <b class="font-black">Media</b><br />
+                        Tamaño del Grupo: <b class="font-black">Pequeño</b>
                     </div>
-                    <button class="btn-reserve" type="button">Reserve ahora</button>
+                    <button class="bg-[#1e64d4] text-white rounded-[6px] py-[0.6rem] px-[1.2rem] font-bold mt-4 cursor-pointer transition-colors duration-200 hover:bg-[#144ea6] hover:text-white btn-reserve" type="button">
+                        Reserve ahora
+                    </button>
                 </div>
             </article>
 
-            <article class="tour-card" aria-label="Tour Paracas Reserva Nacional">
-                <img src="https://www.tours-machupicchu-peru.com/wp-content/uploads/2021/11/Reserva-Nacional-De-Paracas.jpg" alt="Tour Reserva Nacional" />
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transition-shadow duration-300 transform hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(30,198,179,0.18)]" aria-label="Tour Paracas Reserva Nacional">
+                <img class="w-full h-[220px] object-cover" src="https://www.tours-machupicchu-peru.com/wp-content/uploads/2021/11/Reserva-Nacional-De-Paracas.jpg" alt="Tour Reserva Nacional" />
                 <div class="tour-content">
                     <h3>Tour Reserva Nacional Paracas</h3>
-                    <div class="tour-subtitle">Paracas - Reserva Nacional</div>
-                    <div class="tour-price">Desde: <strong>$40.00</strong></div>
-                    <div class="tour-details">
-                        Duración: <b>3 horas</b><br />
-                        Nivel de actividad: <b>Bajo</b><br />
-                        Tamaño del Grupo: <b>Grande</b>
+                    <div class="text-[#999] text-[0.88rem] mb-[0.7rem]">Paracas - Reserva Nacional</div>
+                    <div class="font-black mb-2 text-[1.15rem] text-[#1e64d4]">Desde: <strong class="text-[#0dbaa6]">$40.00</strong></div>
+                    <div class="text-[0.95rem] mb-[0.8rem]">
+                        Duración: <b class="font-black">3 horas</b><br />
+                        Nivel de actividad: <b class="font-black">Bajo</b><br />
+                        Tamaño del Grupo: <b class="font-black">Grande</b>
                     </div>
-                    <button class="btn-reserve" type="button">Reserve ahora</button>
+                    <button class="bg-[#1e64d4] text-white rounded-[6px] py-[0.6rem] px-[1.2rem] font-bold mt-4 cursor-pointer transition-colors duration-200 hover:bg-[#144ea6] hover:text-white btn-reserve" type="button">
+                        Reserve ahora
+                    </button>
                 </div>
             </article>
 
-    <article class="tour-card" aria-label="Tour Huacachina y Dunas">
-  <img src="https://images.unsplash.com/photo-1593113598332-cd50ff18038c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+    <article class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transition-shadow duration-300 transform hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(30,198,179,0.18)]" aria-label="Tour Huacachina y Dunas">
+  <img class="w-full h-[220px] object-cover" src="https://www.incatrilogytours.com/wp-content/uploads/2025/05/huacachina-sunset-con-buggies-9-x-6.jpg" 
        alt="Tour Huacachina y Dunas" />
   <div class="tour-content">
     <h3>Tour Huacachina y Dunas</h3>    
-    <div class="tour-subtitle">Ica - Huacachina</div>
-    <div class="tour-price">Desde: <strong>$55.00</strong></div>
-    <div class="tour-details">
-      Duración: <b>4 horas</b><br />
-      Nivel de actividad: <b>Media</b><br />
-      Tamaño del Grupo: <b>Mediano</b>
+    <div class="text-[#999] text-[0.88rem] mb-[0.7rem]">Ica - Huacachina</div>
+    <div class="font-black mb-2 text-[1.15rem] text-[#1e64d4]">Desde: <strong class="text-[#0dbaa6]">$55.00</strong></div>
+    <div class="text-[0.95rem] mb-[0.8rem]">
+      Duración: <b class="font-black">4 horas</b><br />
+      Nivel de actividad: <b class="font-black">Media</b><br />
+      Tamaño del Grupo: <b class="font-black">Mediano</b>
     </div>
-    <button class="btn-reserve" type="button">Reserve ahora</button>
+    <button class="bg-[#1e64d4] text-white rounded-[6px] py-[0.6rem] px-[1.2rem] font-bold mt-4 cursor-pointer transition-colors duration-200 hover:bg-[#144ea6] hover:text-white btn-reserve" type="button">
+        Reserve ahora
+    </button>
   </div>
 </article>
 
 
-            <article class="tour-card" aria-label="Tour Lima Histórico y Cultural">
-                <img src="https://venttourperu.com/wp-content/uploads/2023/12/city-tour-lima7.jpg" alt="Tour Lima Histórico" />
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transition-shadow duration-300 transform hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(30,198,179,0.18)]" aria-label="Tour Lima Histórico y Cultural">
+                <img class="w-full h-[220px] object-cover" src="https://venttourperu.com/wp-content/uploads/2023/12/city-tour-lima7.jpg" alt="Tour Lima Histórico" />
                 <div class="tour-content">
                     <h3>Tour Lima Histórico y Cultural</h3>
-                    <div class="tour-subtitle">Lima - Ciudad</div>
-                    <div class="tour-price">Desde: <strong>$65.00</strong></div>
-                    <div class="tour-details">
-                        Duración: <b>5 horas</b><br />
-                        Nivel de actividad: <b>Bajo</b><br />
-                        Tamaño del Grupo: <b>Pequeño</b>
+                    <div class="text-[#999] text-[0.88rem] mb-[0.7rem]">Lima - Ciudad</div>
+                    <div class="font-black mb-2 text-[1.15rem] text-[#1e64d4]">Desde: <strong class="text-[#0dbaa6]">$65.00</strong></div>
+                    <div class="text-[0.95rem] mb-[0.8rem]">
+                        Duración: <b class="font-black">5 horas</b><br />
+                        Nivel de actividad: <b class="font-black">Bajo</b><br />
+                        Tamaño del Grupo: <b class="font-black">Pequeño</b>
                     </div>
-                    <button class="btn-reserve" type="button">Reserve ahora</button>
+                    <button class="bg-[#1e64d4] text-white rounded-[6px] py-[0.6rem] px-[1.2rem] font-bold mt-4 cursor-pointer transition-colors duration-200 hover:bg-[#144ea6] hover:text-white btn-reserve" type="button">
+                        Reserve ahora
+                    </button>
                 </div>
             </article>
 
-            <article class="tour-card" aria-label="Tour Arequipa y Cañón del Colca">
-                <img src="https://denomades.imgix.net/destinos/arequipa/367/full-day-canon-del-colca-id367-533f.jpg?w=907&h=494&fit=crop&q=100&auto=format,compress&fm=webp" alt="Tour Arequipa" />
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transition-shadow duration-300 transform hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(30,198,179,0.18)]" aria-label="Tour Arequipa y Cañón del Colca">
+                <img class="w-full h-[220px] object-cover" src="https://denomades.imgix.net/destinos/arequipa/367/full-day-canon-del-colca-id367-533f.jpg?w=907&h=494&fit=crop&q=100&auto=format,compress&fm=webp" alt="Tour Arequipa" />
                 <div class="tour-content">
                     <h3>Tour Arequipa y Cañón del Colca</h3>
-                    <div class="tour-subtitle">Arequipa - Colca</div>
-                    <div class="tour-price">Desde: <strong>$230.00</strong></div>
-                    <div class="tour-details">
-                        Duración: <b>3 Días</b><br />
-                        Nivel de actividad: <b>Alta</b><br />
-                        Tamaño del Grupo: <b>Mediano</b>
+                    <div class="text-[#999] text-[0.88rem] mb-[0.7rem]">Arequipa - Colca</div>
+                    <div class="font-black mb-2 text-[1.15rem] text-[#1e64d4]">Desde: <strong class="text-[#0dbaa6]">$230.00</strong></div>
+                    <div class="text-[0.95rem] mb-[0.8rem]">
+                        Duración: <b class="font-black">3 Días</b><br />
+                        Nivel de actividad: <b class="font-black">Alta</b><br />
+                        Tamaño del Grupo: <b class="font-black">Mediano</b>
                     </div>
-                    <button class="btn-reserve" type="button">Reserve ahora</button>
+                    <button class="bg-[#1e64d4] text-white rounded-[6px] py-[0.6rem] px-[1.2rem] font-bold mt-4 cursor-pointer transition-colors duration-200 hover:bg-[#144ea6] hover:text-white btn-reserve" type="button">
+                        Reserve ahora
+                    </button>
                 </div>
             </article>
 
-            <article class="tour-card" aria-label="Tour Nazca y Líneas de Nazca">
-                <img src="https://viajesica.com/wp-content/uploads/2019/02/uu1.jpg" alt="Tour Nazca" />
+            <article class="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transition-shadow duration-300 transform hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(30,198,179,0.18)]" aria-label="Tour Nazca y Líneas de Nazca">
+                <img class="w-full h-[220px] object-cover" src="https://viajesica.com/wp-content/uploads/2019/02/uu1.jpg" alt="Tour Nazca" />
                 <div class="tour-content">
                     <h3>Tour Nazca y Líneas de Nazca</h3>
-                    <div class="tour-subtitle">Nazca</div>
-                    <div class="tour-price">Desde: <strong>$150.00</strong></div>
-                    <div class="tour-details">
-                        Duración: <b>1 Día</b><br />
-                        Nivel de actividad: <b>Media</b><br />
-                        Tamaño del Grupo: <b>Mediano</b>
+                    <div class="text-[#999] text-[0.88rem] mb-[0.7rem]">Nazca</div>
+                    <div class="font-black mb-2 text-[1.15rem] text-[#1e64d4]">Desde: <strong class="text-[#0dbaa6]">$150.00</strong></div>
+                    <div class="text-[0.95rem] mb-[0.8rem]">
+                        Duración: <b class="font-black">1 Día</b><br />
+                        Nivel de actividad: <b class="font-black">Media</b><br />
+                        Tamaño del Grupo: <b class="font-black">Mediano</b>
                     </div>
-                    <button class="btn-reserve" type="button">Reserve ahora</button>
+                    <button class="bg-[#1e64d4] text-white rounded-[6px] py-[0.6rem] px-[1.2rem] font-bold mt-4 cursor-pointer transition-colors duration-200 hover:bg-[#144ea6] hover:text-white btn-reserve" type="button">
+                        Reserve ahora
+                    </button>
                 </div>
             </article>
 
@@ -240,7 +260,7 @@
     </section>
 
     <!-- Alojamiento -->
-    <section class="alojamiento-section container" aria-label="Alojamiento en Ica">
+    <section class="alojamiento-section container seccion-aparecer" aria-label="Alojamiento en Ica">
         <h2>Alojamiento en Ica</h2>
         <div class="alojamiento-cards">
             <div class="alojamiento-card" tabindex="0" aria-label="Hotel Los Frayles">
@@ -259,7 +279,7 @@
     </section>
 
     <!-- Formulario y Mapa -->
-    <section class="contact-and-map container">
+    <section class="contact-and-map container seccion-aparecer">
         <form class="form-contact" aria-label="Formulario de contacto" action="#" method="post">
             <h2>¿Cómo podemos ayudarte?</h2>
             <div class="form-group">
@@ -380,8 +400,10 @@
             Este sitio está protegido por reCAPTCHA y se aplican la <a href="#">Política de Privacidad</a> y los <a href="#">Términos de Servicio</a> de Google.
         </div>
     </footer>
+</div>
 
     <script src="funciones/script.js"></script>
+    <script src="funciones/animations.js"></script>
 
 </body>
 </html>

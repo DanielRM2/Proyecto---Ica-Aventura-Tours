@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tours y Paquetes | Ica Aventura Tours</title>
+  <link rel="icon" type="image/webp" href="https://icatravelperu.com/wp-content/uploads/2021/11/logo-ica-peru-travel.webp">
   <link rel="stylesheet" href="estilos/css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
+<div id="contenido-principal">
   <!-- BARRA DE NAVEGACIÓN -->
   <nav class="main-nav" role="navigation" aria-label="Barra de navegación principal">
     <ul>
@@ -16,9 +19,9 @@
       <li><a href="viajes.html">Viajes a medida</a></li>
       <li><a href="nosotros.html">Nosotros</a></li>
     </ul>
-    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
-      &#9776
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+            <i class="fas fa-bars"></i>
+        </button>
   </nav>
 
   <!-- BARRA DE NAVEGACIÓN -->
@@ -43,7 +46,7 @@
 
 
   <!-- SECCIÓN TOURS Y PAQUETES -->
-  <section class="tours-section container" aria-label="Tours y Paquetes">
+  <section class="tours-section container seccion-aparecer" aria-label="Tours y Paquetes">
   <div class="tours-header">
       <span id="tituloTours">🗺️ Tours y Paquetes</span>
   <select aria-label="Filtrar tours" class="tours-filter-select">
@@ -151,8 +154,11 @@
       Este sitio está protegido por reCAPTCHA y se aplican la <a href="#">Política de Privacidad</a> y los <a href="#">Términos de Servicio</a> de Google.
     </div>
   </footer>
+</div>
 
-  <script src="funciones/script.js"></script>
+<script src="funciones/script.js"></script>
+<script src="funciones/animations.js"></script>
 <script src="funciones/tours.js"></script>
+
 </body>
 </html>

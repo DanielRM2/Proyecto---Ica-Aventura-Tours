@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Destinos Perú | Ica Aventura Tours</title>
+  <link rel="icon" type="image/webp" href="https://icatravelperu.com/wp-content/uploads/2021/11/logo-ica-peru-travel.webp">
   <link rel="stylesheet" href="estilos/css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
+<div id="contenido-principal">
   <!-- BARRA DE NAVEGACIÓN -->
   <nav class="main-nav" role="navigation" aria-label="Barra de navegación principal">
         <ul>
@@ -16,8 +19,8 @@
             <li><a href="viajes.html">Viajes a medida</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
         </ul>
-        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
-            &#9776
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+            <i class="fas fa-bars"></i>
         </button>
     </nav>
 
@@ -43,93 +46,111 @@
     </header>
 
   <!-- SECCIÓN DESTINOS - GRID -->
-  <section class="destinos-grid">
+  <section class="destinos-grid seccion-aparecer">
     <!-- ICA -->
-    <div class="destino-card">
-      <div class="destino-image" style="background-image: url('https://www.peru.travel/Contenido/Destino/Imagen/es/5/1.2/Principal/SouthAmericaPeru2017_1010_180704-5912_AGP_HDR-_2_-_1_.home%20_7_.jpg');"></div>
-      <div class="destino-content">
-        <h2>Ica</h2>
-        <p>Viñedos, oasis y aventura en las dunas de Huacachina</p>
-        <a href="#" class="btn-destino">Ver más</a>
+    <div class="overflow-hidden rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-transform transition-shadow duration-300 bg-white flex flex-col hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+      <div class="w-full pt-[60%] bg-cover bg-center destino-image" style="background-image: url('https://www.peru.travel/Contenido/Destino/Imagen/es/5/1.2/Principal/SouthAmericaPeru2017_1010_180704-5912_AGP_HDR-_2_-_1_.home%20_7_.jpg');"></div>
+      <div class="flex-1 flex flex-col justify-between p-4 min-h-[200px] destino-content">
+        <h2 class="text-[1.8rem] text-[#202020] mb-2">Ica</h2>
+        <p class="text-base text-[#555] leading-[1.5] flex-grow">Viñedos, oasis y aventura en las dunas de Huacachina</p>
+        <a href="#" class="inline-block text-center px-5 py-3 bg-[#1e64d4] text-white rounded-[6px] text-[0.95rem] font-semibold no-underline transition-all duration-300 ease-in-out hover:bg-[#003366] hover:-translate-y-[2px] btn-destino">
+          Ver más
+        </a>
       </div>
     </div>
 
     <!-- LIMA -->
-    <div class="destino-card">
-      <div class="destino-image" style="background-image: url('https://www.caminosalkantay.com/blog/wp-content/uploads/2024/11/miraflores-lima-city-in-front-the-ocean-1024x767-1.jpg');"></div>
-      <div class="destino-content">
-        <h2>Lima</h2>
-        <p>Gastronomía, historia y costa en la capital</p>
-        <a href="#" class="btn-destino">Ver más</a>
+    <div class="overflow-hidden rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-transform transition-shadow duration-300 bg-white flex flex-col hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+      <div class="w-full pt-[60%] bg-cover bg-center destino-image" style="background-image: url('https://www.caminosalkantay.com/blog/wp-content/uploads/2024/11/miraflores-lima-city-in-front-the-ocean-1024x767-1.jpg');"></div>
+      <div class="flex-1 flex flex-col justify-between p-4 min-h-[200px] destino-content">
+        <h2 class="text-[1.8rem] text-[#202020] mb-2">Lima</h2>
+        <p class="text-base text-[#555] leading-[1.5] flex-grow">Gastronomía, historia y costa en la capital</p>
+        <a href="#" class="inline-block text-center px-5 py-3 bg-[#1e64d4] text-white rounded-[6px] text-[0.95rem] font-semibold no-underline transition-all duration-300 ease-in-out hover:bg-[#003366] hover:-translate-y-[2px] btn-destino">
+          Ver más
+        </a>
       </div>
     </div>
 
     <!-- PARACAS -->
-    <div class="destino-card">
-      <div class="destino-image" style="background-image: url('https://atoqhoteles.com/wp-content/uploads/2025/04/atoq-hoteles-blog-explore-paracas-playa-de-la-mina.png');"></div>
-      <div class="destino-content">
-        <h2>Paracas</h2>
-        <p>Reserva Nacional, ballestas y playas</p>
-        <a href="#" class="btn-destino">Ver más</a>
+    <div class="overflow-hidden rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-transform transition-shadow duration-300 bg-white flex flex-col hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+      <div class="w-full pt-[60%] bg-cover bg-center destino-image" style="background-image: url('https://atoqhoteles.com/wp-content/uploads/2025/04/atoq-hoteles-blog-explore-paracas-playa-de-la-mina.png');"></div>
+      <div class="flex-1 flex flex-col justify-between p-4 min-h-[200px] destino-content">
+        <h2 class="text-[1.8rem] text-[#202020] mb-2">Paracas</h2>
+        <p class="text-base text-[#555] leading-[1.5] flex-grow">Reserva Nacional, ballestas y playas</p>
+        <a href="#" class="inline-block text-center px-5 py-3 bg-[#1e64d4] text-white rounded-[6px] text-[0.95rem] font-semibold no-underline transition-all duration-300 ease-in-out hover:bg-[#003366] hover:-translate-y-[2px] btn-destino">
+          Ver más
+        </a>
       </div>
     </div>
 
     <!-- AREQUIPA -->
-    <div class="destino-card">
-      <div class="destino-image" style="background-image: url('https://www.viajespeedy.com/wp-content/uploads/2024/08/city-tour-arequipa-1.jpg');"></div>
-      <div class="destino-content">
-        <h2>Arequipa</h2>
-        <p>Arquitectura colonial y el Cañón del Colca</p>
-        <a href="#" class="btn-destino">Ver más</a>
+    <div class="overflow-hidden rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-transform transition-shadow duration-300 bg-white flex flex-col hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+      <div class="w-full pt-[60%] bg-cover bg-center destino-image" style="background-image: url('https://www.viajespeedy.com/wp-content/uploads/2024/08/city-tour-arequipa-1.jpg');"></div>
+      <div class="flex-1 flex flex-col justify-between p-4 min-h-[200px] destino-content">
+        <h2 class="text-[1.8rem] text-[#202020] mb-2">Arequipa</h2>
+        <p class="text-base text-[#555] leading-[1.5] flex-grow">Arquitectura colonial y el Cañón del Colca</p>
+        <a href="#" class="inline-block text-center px-5 py-3 bg-[#1e64d4] text-white rounded-[6px] text-[0.95rem] font-semibold no-underline transition-all duration-300 ease-in-out hover:bg-[#003366] hover:-translate-y-[2px] btn-destino">
+          Ver más
+        </a>
       </div>
     </div>
 
     <!-- NAZCA -->
-    <div class="destino-card">
-      <div class="destino-image" style="background-image: url('https://files.pucp.education/puntoedu/wp-content/uploads/2025/06/04172152/web-1920x1080-lineas-de-nazca.jpg');"></div>
-      <div class="destino-content">
-        <h2>Nazca</h2>
-        <p>Misterio y geoglifos en el desierto</p>
-        <a href="#" class="btn-destino">Ver más</a>
+    <div class="overflow-hidden rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-transform transition-shadow duration-300 bg-white flex flex-col hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+      <div class="w-full pt-[60%] bg-cover bg-center destino-image" style="background-image: url('https://files.pucp.education/puntoedu/wp-content/uploads/2025/06/04172152/web-1920x1080-lineas-de-nazca.jpg');"></div>
+      <div class="flex-1 flex flex-col justify-between p-4 min-h-[200px] destino-content">
+        <h2 class="text-[1.8rem] text-[#202020] mb-2">Nazca</h2>
+        <p class="text-base text-[#555] leading-[1.5] flex-grow">Misterio y geoglifos en el desierto</p>
+        <a href="#" class="inline-block text-center px-5 py-3 bg-[#1e64d4] text-white rounded-[6px] text-[0.95rem] font-semibold no-underline transition-all duration-300 ease-in-out hover:bg-[#003366] hover:-translate-y-[2px] btn-destino">
+          Ver más
+        </a>
       </div>
     </div>
     
     <!-- CUSCO -->
-    <div class="destino-card">
-      <div class="destino-image" style="background-image: url('https://www.travelandes.com/img/GalleryContent/111791/cusco1.jpg');"></div>
-      <div class="destino-content">
-        <h2>Cusco</h2>
-        <p>Machu Picchu, Valle Sagrado y la cuna de la cultura Inca. Perfecto para historia y aventura.</p>
-        <a href="#" class="btn-destino">Ver más</a>
+    <div class="overflow-hidden rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-transform transition-shadow duration-300 bg-white flex flex-col hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+      <div class="w-full pt-[60%] bg-cover bg-center destino-image" style="background-image: url('https://www.travelandes.com/img/GalleryContent/111791/cusco1.jpg');"></div>
+      <div class="flex-1 flex flex-col justify-between p-4 min-h-[200px] destino-content">
+        <h2 class="text-[1.8rem] text-[#202020] mb-2">Cusco</h2>
+        <p class="text-base text-[#555] leading-[1.5] flex-grow">Machu Picchu, Valle Sagrado y la cuna de la cultura Inca. Perfecto para historia y aventura.</p>
+        <a href="#" class="inline-block text-center px-5 py-3 bg-[#1e64d4] text-white rounded-[6px] text-[0.95rem] font-semibold no-underline transition-all duration-300 ease-in-out hover:bg-[#003366] hover:-translate-y-[2px] btn-destino">
+          Ver más
+        </a>
       </div>
     </div>
       <!-- PUNO -->
-      <div class="destino-card">
-        <div class="destino-image" style="background-image: url('https://peru.info/archivos/publicacion/120-imagen-179561372018.jpg');"></div>
-        <div class="destino-content">
-          <h2>Puno</h2>
-          <p>Lago Titicaca, islas flotantes y cultura ancestral.</p>
-          <a href="#" class="btn-destino">Ver más</a>
+      <div class="overflow-hidden rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-transform transition-shadow duration-300 bg-white flex flex-col hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+        <div class="w-full pt-[60%] bg-cover bg-center destino-image" style="background-image: url('https://peru.info/archivos/publicacion/120-imagen-179561372018.jpg');"></div>
+        <div class="flex-1 flex flex-col justify-between p-4 min-h-[200px] destino-content">
+          <h2 class="text-[1.8rem] text-[#202020] mb-2">Puno</h2>
+          <p class="text-base text-[#555] leading-[1.5] flex-grow">Lago Titicaca, islas flotantes y cultura ancestral.</p>
+          <a href="#" class="inline-block text-center px-5 py-3 bg-[#1e64d4] text-white rounded-[6px] text-[0.95rem] font-semibold no-underline transition-all duration-300 ease-in-out hover:bg-[#003366] hover:-translate-y-[2px] btn-destino">
+          Ver más
+          </a>
         </div>
       </div>
 
       <!-- TRUJILLO -->
-      <div class="destino-card">
-        <div class="destino-image" style="background-image: url('https://denomades-blog.imgix.net/blog/wp-content/uploads/2020/09/19163849/shutterstock_217920055-1.jpg?auto=compress%2Cformat&ixlib=php-3.3.1');"></div>
-        <div class="destino-content">
-          <h2>Trujillo</h2>
-          <p>Chan Chan, Huacas y marinera norteña.</p>
-          <a href="#" class="btn-destino">Ver más</a>
+      <div class="overflow-hidden rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-transform transition-shadow duration-300 bg-white flex flex-col hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+        <div class="w-full pt-[60%] bg-cover bg-center destino-image" style="background-image: url('https://denomades-blog.imgix.net/blog/wp-content/uploads/2020/09/19163849/shutterstock_217920055-1.jpg?auto=compress%2Cformat&ixlib=php-3.3.1');"></div>
+        <div class="flex-1 flex flex-col justify-between p-4 min-h-[200px] destino-content">
+          <h2 class="text-[1.8rem] text-[#202020] mb-2">Trujillo</h2>
+          <p class="text-base text-[#555] leading-[1.5] flex-grow">Chan Chan, Huacas y marinera norteña.</p>
+          <a href="#" class="inline-block text-center px-5 py-3 bg-[#1e64d4] text-white rounded-[6px] text-[0.95rem] font-semibold no-underline transition-all duration-300 ease-in-out hover:bg-[#003366] hover:-translate-y-[2px] btn-destino">
+          Ver más
+          </a>
         </div>
       </div>
 
       <!-- PIURA -->
-      <div class="destino-card">
-        <div class="destino-image" style="background-image: url('https://www.turiweb.pe/wp-content/uploads/2020/10/piura-playa-201020.jpg');"></div>
-        <div class="destino-content">
-          <h2>Piura</h2>
-          <p>Playas cálidas como Máncora y gastronomía norteña.</p>
-          <a href="#" class="btn-destino">Ver más</a>
+      <div class="overflow-hidden rounded-[12px] shadow-[0_4px_12px_rgba(0,0,0,0.2)] transition-transform transition-shadow duration-300 bg-white flex flex-col hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)]">
+        <div class="w-full pt-[60%] bg-cover bg-center destino-image" style="background-image: url('https://www.turiweb.pe/wp-content/uploads/2020/10/piura-playa-201020.jpg');"></div>
+        <div class="flex-1 flex flex-col justify-between p-4 min-h-[200px] destino-content">
+          <h2 class="text-[1.8rem] text-[#202020] mb-2">Piura</h2>
+          <p class="text-base text-[#555] leading-[1.5] flex-grow">Playas cálidas como Máncora y gastronomía norteña.</p>
+          <a href="#" class="inline-block text-center px-5 py-3 bg-[#1e64d4] text-white rounded-[6px] text-[0.95rem] font-semibold no-underline transition-all duration-300 ease-in-out hover:bg-[#003366] hover:-translate-y-[2px] btn-destino">
+          Ver más
+          </a>
         </div>
       </div>
   </section>
@@ -222,7 +243,8 @@
             Este sitio está protegido por reCAPTCHA y se aplican la <a href="#">Política de Privacidad</a> y los <a href="#">Términos de Servicio</a> de Google.
         </div>
     </footer>
-
-  <script src="funciones/script.js"></script>
+</div>
+<script src="funciones/script.js"></script>
+<script src="funciones/animations.js"></script>
 </body>
 </html>

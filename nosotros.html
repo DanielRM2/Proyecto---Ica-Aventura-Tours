@@ -1,199 +1,277 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nosotros | Ica Aventura Tours</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link rel="icon" type="image/webp"
+    href="https://icatravelperu.com/wp-content/uploads/2021/11/logo-ica-peru-travel.webp">
   <link rel="stylesheet" href="estilos/css/main.css">
+
+  <!-- Tailwind por CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
 
-  <!-- BARRA DE NAVEGACIÓN -->
-  <nav class="main-nav" role="navigation" aria-label="Barra de navegación principal">
+<body class="bg-slate-50">
+  <div id="contenido-principal">
+
+    <!-- NAV -->
+    <nav class="main-nav" role="navigation" aria-label="Barra de navegación principal">
       <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="tours.html">Tours</a></li>
-          <li><a href="destinos.html">Destinos</a></li>
-          <li><a href="viajes.html">Viajes a medida</a></li>
-          <li><a href="nosotros.html" class="active">Nosotros</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="destinos.html">Destinos</a></li>
+        <li><a href="viajes.html">Viajes a medida</a></li>
+        <li><a href="nosotros.html" class="active">Nosotros</a></li>
       </ul>
-      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
-          &#9776
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="menu-principal">
+        <i class="fas fa-bars"></i>
       </button>
-  </nav>
-  
+    </nav>
 
-  <header>
-        <img class="banner-bg" src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1400&q=80" alt="Banner principal" />
-        <div class="logo">
-            <img src="https://icatravelperu.com/wp-content/uploads/2021/11/logo-ica-peru-travel.webp" alt="Paracas Explorer Logo" />
-            ICA AVENTURA TOURS S.A.C
-        </div>
+    <!-- HEADER -->
+    <header>
+      <img class="banner-bg"
+        src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1400&q=80"
+        alt="Banner principal" />
+      <div class="logo">
+        <img src="https://icatravelperu.com/wp-content/uploads/2021/11/logo-ica-peru-travel.webp" alt="Logo" />
+        ICA AVENTURA TOURS S.A.C
+      </div>
 
-        <div class="header-lang-select">
-            <select aria-label="Seleccione idioma">
-                <option selected>Español</option>
-                <option>English</option>
-                <option>Português</option>
-            </select>
-        </div>
-        <div class="hero-text">
-            <h1>Quiénes somos</h1>
-            <p>Somos una agencia local dedicada a mostrar lo mejor del Perú con experiencia, seguridad y pasión por el servicio.</p>
-        </div>
+      <div class="header-lang-select">
+        <select aria-label="Seleccione idioma">
+          <option selected>Español</option>
+          <option>English</option>
+          <option>Português</option>
+        </select>
+      </div>
+
+      <div class="hero-text">
+        <h1>Quiénes somos</h1>
+        <p>Somos una agencia local dedicada a mostrar lo mejor del Perú con experiencia, seguridad y pasión por el
+          servicio.</p>
+      </div>
     </header>
 
-  <main class="container nosotros-main">
-    <section class="quienes-somos" aria-label="Quienes somos">
-      <div class="content">
-        <h2>Nuestra historia</h2>
-        <p>Desde nuestros inicios, en Ica Aventura Tours nos enfocamos en crear experiencias auténticas y responsables. Con un equipo formado por guías locales, operadores y aliados turísticos comprometidos, ofrecemos itinerarios diseñados para conectar al viajero con la cultura, la historia y los paisajes del Perú.</p>
-        <p>Nuestros años de experiencia en Paracas, Ica y la región nos permiten garantizar logística eficiente, guías bilingües y servicios seguros adaptados a todo tipo de viajeros.</p>
-      </div>
-      <figure class="image">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Equipo y oficinas" />
-      </figure>
-    </section>
+    <!-- MAIN -->
+    <main class="w-full px-6 lg:px-16 py-20 space-y-32">
 
-    <section class="mision-vision container-grid" aria-label="Misión y visión">
-      <article class="mision">
-        <h3>Misión</h3>
-        <p>Ofrecer experiencias turísticas seguras, sostenibles y memorables que promuevan el patrimonio natural y cultural del Perú, contribuyendo al desarrollo local y al bienestar de nuestras comunidades.</p>
-      </article>
-      <article class="vision">
-        <h3>Visión</h3>
-        <p>Ser reconocidos como la opción líder en la región por la calidad de nuestros servicios, la innovación en experiencias turísticas y el compromiso con la sostenibilidad.</p>
-      </article>
-      <article class="valores">
-        <h3>Valores</h3>
-        <ul>
-          <li><strong>Seguridad:</strong> Prioridad absoluta en todos nuestros servicios.</li>
-          <li><strong>Sostenibilidad:</strong> Respeto por los ecosistemas y las comunidades.</li>
-          <li><strong>Excelencia:</strong> Atención profesional y personalizada.</li>
-          <li><strong>Transparencia:</strong> Información clara y precios justos.</li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- Sección de equipo eliminada por solicitud del cliente -->
-
-    <section class="compromiso container" aria-label="Compromiso y certificaciones">
-      <h2>Compromiso con la calidad</h2>
-      <p>Trabajamos con proveedores certificados y seguimientos de protocolos de seguridad. Nuestro compromiso incluye apoyo a proyectos locales, contratación responsable y formación continua para nuestro personal.</p>
-      <div class="certs">
-        <div class="cert">
-          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=400&q=60" alt="Certificado de seguridad" />
-          <div class="cert-title">Certificado de seguridad</div>
+      <!-- NUESTRA HISTORIA -->
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-extrabold text-[#1e64d4] mb-6 lg:mb-8">
+            Nuestra historia
+          </h2>
+          <p class="text-sm lg:text-base text-slate-700 leading-relaxed mb-3">
+            Desde nuestros inicios, en <strong>Ica Aventura Tours</strong> nos enfocamos en crear experiencias
+            auténticas y responsables.
+            Con un equipo formado por guías locales, operadores y aliados turísticos comprometidos, ofrecemos
+            itinerarios diseñados
+            para conectar al viajero con la cultura, la historia y los paisajes del Perú.
+          </p>
+          <p class="text-sm lg:text-base text-slate-700 leading-relaxed">
+            Nuestros años de experiencia en Paracas, Ica y el sur del Perú nos permiten garantizar logística eficiente,
+            guías bilingües y servicios seguros adaptados a todo tipo de viajeros.
+          </p>
         </div>
-        <div class="cert">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=60" alt="Alianzas con operadores locales" />
-          <div class="cert-title">Alianzas con operadores locales</div>
-        </div>
-        <div class="cert">
-          <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=60" alt="Atención 24/7 en emergencias" />
-          <div class="cert-title">Atención 24/7 en emergencias</div>
-        </div>
-      </div>
-    </section>
 
-    <section class="cta-contact container" aria-label="Contacto y reservas">
-      <h2>¿Listo para tu próxima aventura?</h2>
-      <p>Contáctanos y diseñaremos el viaje perfecto para ti.</p>
-      <a href="index.html#contact" class="btn-primary">Contáctanos</a>
-    </section>
-  </main>
+        <figure class="rounded-3xl overflow-hidden shadow-2xl">
+          <img class="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
+            alt="Equipo y oficinas" />
+        </figure>
+      </section>
 
-  <!-- Footer (copiado y adaptado) -->
-  <footer>
-    <div class="footer-main container" role="contentinfo">
+      <!-- NUESTRA ESENCIA -->
+      <section class="text-center">
+        <h2 class="text-3xl lg:text-4xl font-extrabold text-[#1e64d4] mb-10 lg:mb-12">
+          Nuestra esencia
+        </h2>
 
-        <section class="footer-section">
-            <h4>Nuestra empresa</h4>
-            <ul>
-                <li><a href="#">Conózcanos</a></li>
-                <li><a href="#">Trabaje con nosotros</a></li>
-                <li><a href="#">Hoteles</a></li>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+          <!-- Misión -->
+          <article
+            class="bg-white rounded-3xl shadow-xl px-8 py-8 lg:px-10 lg:py-10 flex flex-col items-center text-center">
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Misión</h3>
+            <p class="text-sm lg:text-base text-slate-700 max-w-xs mx-auto">
+              Ofrecer experiencias turísticas seguras, sostenibles y memorables que promuevan el patrimonio natural y
+              cultural del Perú.
+            </p>
+          </article>
+
+          <!-- Visión -->
+          <article
+            class="bg-white rounded-3xl shadow-xl px-8 py-8 lg:px-10 lg:py-10 flex flex-col items-center text-center">
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Visión</h3>
+            <p class="text-sm lg:text-base text-slate-700 max-w-xs mx-auto">
+              Ser reconocidos como la opción líder en la región por la calidad de nuestros servicios
+              y nuestro compromiso con la sostenibilidad.
+            </p>
+          </article>
+
+          <!-- Valores -->
+          <article class="bg-white rounded-3xl shadow-xl px-10 py-10 flex flex-col items-center text-center">
+            <h3 class="text-xl font-bold text-slate-900 mb-4">Valores</h3>
+
+            <ul class="text-sm lg:text-base text-slate-700 space-y-2 text-center leading-relaxed max-w-xs">
+              <li><span class="font-semibold text-slate-900">Seguridad:</span> Prioridad absoluta.</li>
+              <li><span class="font-semibold text-slate-900">Sostenibilidad:</span> Respeto por el entorno.</li>
+              <li><span class="font-semibold text-slate-900">Excelencia:</span> Atención profesional.</li>
+              <li><span class="font-semibold text-slate-900">Transparencia:</span> Información clara.</li>
             </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- COMPROMISO CON LA CALIDAD -->
+      <section>
+        <!-- Título -->
+        <div class="flex flex-col items-center text-center">
+          <h2 class="text-3xl lg:text-4xl font-extrabold text-[#1e64d4] mb-4 lg:mb-6">
+            Compromiso con la calidad
+          </h2>
+
+          <div class="flex justify-center w-full">
+            <p class="text-sm lg:text-base text-slate-700 leading-relaxed mb-12 lg:mb-16" style="max-width: 900px;">
+              Trabajamos con proveedores certificados, protocolos de seguridad y alianzas estratégicas
+              que nos permiten garantizar experiencias confiables y responsables en cada viaje.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjetas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 mt-4 lg:mt-0">
+          <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <img class="w-full h-[240px] lg:h-[260px] object-cover"
+              src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1000&q=60"
+              alt="Certificado de seguridad" />
+            <p class="p-5 font-semibold text-sm lg:text-base text-slate-900 text-center">
+              Certificado de seguridad
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <img class="w-full h-[240px] lg:h-[260px] object-cover"
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=60"
+              alt="Alianzas locales" />
+            <p class="p-5 font-semibold text-sm lg:text-base text-slate-900 text-center">
+              Alianzas locales
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <img class="w-full h-[240px] lg:h-[260px] object-cover"
+              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1000&q=60"
+              alt="Atención 24/7" />
+            <p class="p-5 font-semibold text-sm lg:text-base text-slate-900 text-center">
+              Atención 24/7
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="bg-transparent">
+        <div class="flex flex-col items-center text-center py-16 lg:py-20">
+          <h2 class="text-2xl lg:text-3xl font-extrabold mb-3 lg:mb-4">
+            ¿Listo para tu próxima aventura?
+          </h2>
+
+          <p class="text-sm lg:text-base text-slate-700 leading-relaxed mb-6 lg:mb-8" style="max-width: 720px;">
+            Contáctanos y diseñaremos el viaje perfecto para ti, adaptado a tus tiempos,
+            intereses y estilo de viaje.
+          </p>
+
+    
+          <a href="index.html#contact"
+            class="inline-flex items-center justify-center bg-[#1e64d4] text-white px-10 py-3.5 rounded-full text-base lg:text-lg font-semibold shadow-lg hover:bg-[#144ea6] hover:shadow-xl transition min-w-[190px]">
+            Contáctanos
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER  -->
+    <footer>
+      <div class="footer-main container" role="contentinfo">
+        <section class="footer-section">
+          <h4>Nuestra empresa</h4>
+          <ul>
+            <li><a href="#">Conózcanos</a></li>
+            <li><a href="#">Trabaje con nosotros</a></li>
+            <li><a href="#">Hoteles</a></li>
+          </ul>
         </section>
 
         <section class="footer-section">
-            <h4>Ica Aventura Tours</h4>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="tours.html">Todos los tours</a></li>
-            </ul>
+          <h4>Ica Aventura Tours</h4>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Todos los tours</a></li>
+          </ul>
         </section>
 
         <section class="footer-section">
-            <h4>Destinos</h4>
-            <ul>
-                <li><a href="tours.html">Tours en Paracas</a></li>
-                <li><a href="tours.html">Tours en Lima</a></li>
-                <li><a href="tours.html">Tours en Arequipa</a></li>
-                <li><a href="tours.html">Tours en Nazca</a></li>
-                <li><a href="tours.html">Tours en Cuzco</a></li>
-                <li><a href="tours.html">Tours en Puno</a></li>
-                <li><a href="tours.html">Tours en Ica</a></li>
-            </ul>
+          <h4>Destinos</h4>
+          <ul>
+            <li><a href="#">Tours en Paracas</a></li>
+            <li><a href="#">Tours en Lima</a></li>
+            <li><a href="#">Tours en Arequipa</a></li>
+            <li><a href="#">Tours en Nazca</a></li>
+            <li><a href="#">Tours en Cuzco</a></li>
+            <li><a href="#">Tours en Puno</a></li>
+            <li><a href="#">Tours en Ica</a></li>
+          </ul>
         </section>
 
         <section class="footer-section">
-            <h4>Agencias</h4>
-            <ul>
-                <li><a href="#">Centro de asistencia</a></li>
-            </ul>
-            <h4 style="margin-top:1rem;">Alojamiento</h4>
-            <ul>
-                <li><a href="#">Hotel en Ica</a></li>
-                <li><a href="#">Hostal en Ica</a></li>
-            </ul>
-            <h4 style="margin-top:1rem;">Legal</h4>
-            <ul>
-                <li><a href="#">Políticas de cancelación</a></li>
-                <li><a href="#">Política de reservas</a></li>
-            </ul>
+          <h4>Agencias</h4>
+          <ul>
+            <li><a href="#">Centro de asistencia</a></li>
+          </ul>
+
+          <h4 class="footer-title-margin">Alojamiento</h4>
+          <ul>
+            <li><a href="#">Hotel en Ica</a></li>
+            <li><a href="#">Hostal en Ica</a></li>
+          </ul>
+
+          <h4 class="footer-title-margin">Legal</h4>
+          <ul>
+            <li><a href="#">Políticas de cancelación</a></li>
+            <li><a href="#">Política de reservas</a></li>
+          </ul>
         </section>
 
         <section class="footer-section lang-select-footer">
-            <button aria-label="Cambiar idioma -> Español">Español ➔</button>
+          <button aria-label="Cambiar idioma -> Español">Español ➔</button>
         </section>
 
         <section class="footer-section">
-            <h4>Referencias</h4>
-            <ul>
-                <li><a href="#">TripAdvisor</a></li>
-                <li><a href="#">Y tú qué planes</a></li>
-                <li><a href="#">Libro de reclamaciones</a></li>
-            </ul>
+          <h4>Referencias</h4>
+          <ul>
+            <li><a href="#">TripAdvisor</a></li>
+            <li><a href="#">Y tú qué planes</a></li>
+            <li><a href="#">Libro de reclamaciones</a></li>
+          </ul>
         </section>
-    </div>
+      </div>
 
-    <div class="social-icons" role="navigation" aria-label="Redes sociales">
-        <a href="#" aria-label="Facebook" title="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M22.6757 0H1.32521C0.593309 0 0 0.593309 0 1.32521V22.6757C0 23.4067 0.593309 24 1.32521 24H12.8197V14.7086H9.69231V11.1667H12.8197V8.41292C12.8197 5.31679 14.7384 3.66154 17.4654 3.66154C18.76 3.66154 19.9149 3.79174 20.2371 3.83015V7.00357L18.315 7.0041C16.7458 7.0041 16.4461 7.71954 16.4461 8.75209V11.1635H20.1087L19.6212 14.7053H16.4461V24H22.6757C23.4067 24 24 23.4067 24 22.6757V1.32521C24 0.593309 23.4067 0 22.6757 0Z"/></svg>
-        </a>
-        <a href="#" aria-label="Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 4.59443C15.6036 4.59443 16.0123 4.61339 17.2093 4.76389C18.3504 4.90815 19.2404 5.30826 19.9247 5.99255C20.609 6.67678 21.0094 7.56679 21.1536 8.70786C21.3042 9.90485 21.3231 10.3135 21.3231 13.896C21.3231 17.4988 21.3042 17.9073 21.1536 19.1055C21.0094 20.2464 20.609 21.1362 19.9247 21.8205C19.2404 22.5047 18.3504 22.9049 17.2093 23.0492C16.0123 23.1997 15.6036 23.2187 12 23.2187C8.39643 23.2187 7.98759 23.1997 6.79074 23.0492C5.64961 22.9049 4.75958 22.5047 4.07534 21.8205C3.39111 21.1362 2.99101 20.2464 2.84666 19.1055C2.69593 17.9073 2.67701 17.4988 2.67701 13.896C2.67701 10.3135 2.69593 9.90485 2.84666 8.70786C2.99101 7.56679 3.39111 6.67678 4.07534 5.99255C4.75958 5.30826 5.64961 4.90815 6.79074 4.76389C7.98759 4.61339 8.39643 4.59443 12 4.59443ZM12 2.34375C8.30194 2.34375 7.87215 2.36271 6.64602 2.51286C5.42414 2.66294 4.45502 3.0316 3.64405 3.84157C2.83341 4.65202 2.46426 5.621 2.31395 6.84206C2.16664 8.06818 2.14786 8.49793 2.14786 12.1819C2.14786 15.8589 2.16664 16.2884 2.31395 17.5231C2.46426 18.7393 2.83341 19.7168 3.64405 20.5273C4.45461 21.3383 5.42603 21.7044 6.64602 21.855C7.87626 22.0045 8.30194 22.0236 12 22.0236C15.6981 22.0236 16.1278 22.0045 17.3537 21.855C18.5756 21.7044 19.5436 21.3383 20.3545 20.5273C21.1648 19.7168 21.5334 18.7393 21.683 17.5231C21.8333 16.2884 21.8521 15.8589 21.8521 12.1819C21.8521 8.49793 21.8333 8.06818 21.683 6.84206C21.5334 5.621 21.1648 4.65202 20.3545 3.84157C19.5448 3.0316 18.5767 2.66294 17.3537 2.51286C16.1278 2.36271 15.6981 2.34375 12 2.34375Z"/></svg>
-        </a>
-        <a href="#" aria-label="TripAdvisor" title="TripAdvisor">
-            <svg viewBox="0 0 24 24"><path d="M12 3.38c-3.66 0-6.69 3.45-6.69 7.7s3.03 7.7 6.69 7.7 6.69-3.45 6.69-7.7-3.03-7.7-6.69-7.7zm-5.24 6.6c.955 0 1.73.93 1.73 2.08 0 1.15-.775 2.08-1.73 2.08s-1.73-.93-1.73-2.08c0-1.15.775-2.08 1.73-2.08zm10.48 0c.955 0 1.73.93 1.73 2.08 0 1.15-.775 2.08-1.73 2.08s-1.73-.93-1.73-2.08c0-1.15.775-2.08 1.73-2.08zM12 19.36c-3.35 0-6.15-1.73-7.59-4.34a1 1 0 0 1 1.8-1c1.14 2.05 3.53 3.35 5.8 3.35s4.66-1.3 5.8-3.35a.999.999 0 0 1 1.8 1c-1.44 2.61-4.24 4.34-7.59 4.34z"/></svg>
-        </a>
-    </div>
+      <div class="social-icons" role="navigation" aria-label="Redes sociales">
+        <a href="#" aria-label="Facebook" title="Facebook">FB</a>
+        <a href="#" aria-label="Instagram" title="Instagram">IG</a>
+      </div>
+    </footer>
 
-    <div class="footer-info">
-        <div>✉️ reservas@icaaventuratours.com</div>
-        <div>📞 +51 926 899 756</div>
-        <div>📠 051 531487</div>
-        <div><i class="fas fa-map-marker-alt"></i> Av. Manzanilla Mz. D, L 9, Ica Perú</div>
-    </div>
-
-    <div class="legal-text">
-        Este sitio está protegido por reCAPTCHA y se aplican la <a href="#">Política de Privacidad</a> y los <a href="#">Términos de Servicio</a> de Google.
-    </div>
-  </footer>
+  </div>
 
   <script src="funciones/script.js"></script>
-
+  <script src="funciones/animations.js"></script>
 </body>
+
 </html>

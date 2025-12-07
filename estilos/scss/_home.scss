@@ -2,7 +2,7 @@
 @use 'mixins' as m;
 
 /* Sección destinos - carrusel  */
-.destinos-section {
+.seccion-destinos {
     background-color: v.$background-color;
     color: #e5e5e5;
     padding: 2.5rem 0 3rem;
@@ -10,27 +10,27 @@
     position: relative;
 }
 
-.destinos-section h2 {
+.seccion-destinos h2 {
     margin-bottom: 1.5rem;
     font-weight: 700;
     font-size: 2rem;
     letter-spacing: 1px;
 }
 
-.destinos-carousel {
+.carrusel-destinos {
     max-width: 900px;
     margin: auto;
     overflow: hidden;
     position: relative;
 }
 
-.destinos-carousel-track {
+.carrusel-destinos-pista {
     display: flex;
     gap: 1rem;
     transition: transform 0.4s ease;
 }
 
-.destinos-card {
+.tarjeta-destino {
     flex: 0 0 calc((100% - 2rem) / 3);
     border-radius: 12px;
     overflow: hidden;
@@ -41,7 +41,7 @@
     user-select: none;
 }
 
-.destinos-card img {
+.tarjeta-destino img {
     width: 100%;
     height: 220px;
     object-fit: cover;
@@ -51,11 +51,11 @@
     will-change: transform;
 }
 
-.destinos-card:hover img {
+.tarjeta-destino:hover img {
     transform: scale(1.06);
 }
 
-.destinos-card h3 {
+.tarjeta-destino h3 {
     color: v.$light-color;
     position: absolute;
     top: 50%;
@@ -68,7 +68,7 @@
 }
 
 /* Flechas */
-.carousel-arrow {
+.flecha-carrusel {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -85,15 +85,21 @@
     box-shadow: 0 0 8px rgb(30 100 212 / 0.7);
 }
 
-.carousel-arrow:hover {
+.flecha-carrusel:hover {
     background: var(--primary-color-dark);
 }
 
-.carousel-arrow.left {
+.flecha-carrusel:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #555;
+}
+
+.flecha-carrusel.izquierda {
     left: 10px;
 }
 
-.carousel-arrow.right {
+.flecha-carrusel.derecha {
     right: 10px;
 }
 

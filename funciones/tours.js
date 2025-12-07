@@ -62,30 +62,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const totalPages = () => Math.ceil(filteredTours.length / toursPerPage);
 
-  function renderTours(page) {
-    toursList.innerHTML = '';
-    const start = (page - 1) * toursPerPage;
-    const end = start + toursPerPage;
-    const pageTours = filteredTours.slice(start, end);
+  function renderTours(page, direccion = false) {
+    const renderContent = () => {
+      const slideInAmount = direccion === 'anterior' ? '-40px' : '40px';
+      
+      const start = (page - 1) * toursPerPage, end = start + toursPerPage;
+      const pageTours = filteredTours.slice(start, end), newContent = document.createDocumentFragment();
 
-    pageTours.forEach(tour => {
-      const tourCard = document.createElement('article');
-      tourCard.className = 'tour-card';
-      tourCard.innerHTML = `
-        <img src="${tour.img}" alt="${tour.titulo}" />
-        <div class="tour-content">
-          <h3>${tour.titulo}</h3>
-          <div class="tour-subtitle">${tour.destino}</div>
-          <div class="tour-price">Desde: <strong>${tour.precio}</strong></div>
-          <div class="tour-details">${tour.detalles}</div>
-          <button class="btn-reserve" type="button">Reserve ahora</button>
-        </div>
-      `;
-      toursList.appendChild(tourCard);
-    });
+      pageTours.forEach(tour => {
+        const tourCard = document.createElement('article');
+        tourCard.className = 'bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-transform transition-shadow duration-300 transform hover:translate-y-[-5px] hover:shadow-[0_8px_20px_rgba(30,198,179,0.18)]';
+        tourCard.innerHTML = `<img class="w-full h-[220px] object-cover" src="${tour.img}" alt="${tour.titulo}" /><div class="tour-content">
+                              <h3>${tour.titulo}</h3>
+                              <div class="text-[#999] text-[0.88rem] mb-[0.7rem]">${tour.destino}</div>
+                              <div class="font-black mb-2 text-[1.15rem] text-[#1e64d4]">Desde: <strong class="text-[#0dbaa6]">${tour.precio}</strong></div>
+                              <div class="text-[0.95rem] mb-[0.8rem]">${tour.detalles}</div>
+                              <button class="bg-[#1e64d4] text-white rounded-[6px] py-[0.6rem] px-[1.2rem] font-bold mt-4 cursor-pointer transition-colors duration-200 hover:bg-[#144ea6] hover:text-white btn-reserve" type="button">
+                                Reserve ahora
+                              </button>`;
+        newContent.appendChild(tourCard);
+      });
+      
+      toursList.style.transition = 'none';
+      toursList.style.transform = `translateX(${slideInAmount})`;
+      toursList.style.opacity = '0';
+      
+      toursList.innerHTML = '';
+      toursList.appendChild(newContent);
+      
+      toursList.offsetHeight; 
+      
+      toursList.style.transition = 'opacity 0.25s ease-in-out, transform 0.25s ease-in-out';
+      toursList.classList.remove('cargando', 'cargando-anterior');
+      toursList.style.transform = 'translateX(0)';
+      toursList.style.opacity = '1';
+      
+      renderPagination(page);
+      renderRange(start, Math.min(end, filteredTours.length), filteredTours.length);
+    };
 
-    renderPagination(page);
-    renderRange(start, Math.min(end, filteredTours.length), filteredTours.length);
+    if (direccion) {
+      if (direccion === 'anterior') {
+        toursList.classList.add('cargando-anterior');
+      } else {
+        toursList.classList.add('cargando');
+      }
+      setTimeout(renderContent, 260);
+    } else {
+      renderContent();
+    }
   }
 
   function renderPagination(page) {
@@ -106,8 +131,9 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.setAttribute('aria-current', 'page');
       }
       btn.addEventListener('click', () => {
+        const direccion = i > currentPage ? 'siguiente' : 'anterior';
         currentPage = i;
-        renderTours(currentPage);
+        renderTours(currentPage, direccion);
       });
       paginationPages.appendChild(btn);
     }
@@ -124,14 +150,14 @@ document.addEventListener('DOMContentLoaded', function() {
   paginationPrev.addEventListener('click', () => {
     if (currentPage > 1) {
       currentPage--;
-      renderTours(currentPage);
+      renderTours(currentPage, 'anterior');
     }
   });
 
   paginationNext.addEventListener('click', () => {
     if (currentPage < totalPages()) {
       currentPage++;
-      renderTours(currentPage);
+      renderTours(currentPage, 'siguiente');
     }
   });
 
@@ -140,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const value = this.value;
     filteredTours = value === 'todos' ? tours : tours.filter(t => t.destino.toLowerCase() === value.toLowerCase());
     currentPage = 1;
-    renderTours(currentPage);
+    renderTours(currentPage, 'siguiente');
   });
 
   // Inicializar renderizado

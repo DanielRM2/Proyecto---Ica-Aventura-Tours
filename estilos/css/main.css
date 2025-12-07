@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 /* Estilo del cuerpo */
 * {
   margin: 0;
@@ -20,6 +21,31 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+#contenido-principal {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: aparecerDesdeAbajo 0.6s ease forwards;
+  animation-delay: 0.05s;
+}
+
+@keyframes aparecerDesdeAbajo {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Animación de entrada para secciones al hacer scroll (en español) */
+.seccion-aparecer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.seccion-aparecer.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Barra de navegación */
@@ -59,9 +85,23 @@ nav.main-nav ul li button {
   padding: 0.35rem 0;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
+  position: relative;
+  text-decoration: none;
+}
+
+/* Línea animada debajo de los enlaces */
+nav.main-nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #a9d1ff;
+  transform-origin: bottom right;
+  transition: transform 0.35s ease-out;
 }
 
 nav.main-nav ul li a:hover,
@@ -72,6 +112,11 @@ nav.main-nav ul li button:focus {
   outline: none;
 }
 
+nav.main-nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 /* Menú hamburguesa - estilos móviles */
 .hamburger {
   display: none;
@@ -80,14 +125,24 @@ nav.main-nav ul li button:focus {
   width: 36px;
   height: 32px;
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   right: 20px;
   top: 15px;
   z-index: 1000;
   border: none;
-  border-radius: 8px;
-  background-color: #ccc1c1;
-  font-size: 21px;
+  border-radius: 10%;
+  padding: 15px auto;
+  background-color: #0dbaa6;
+}
+
+.hamburger i {
+  font-size: 1.9rem;
+  color: white;
+  transition: transform 0.35s ease;
+}
+
+.hamburger.active i {
+  transform: rotate(180deg);
 }
 
 nav.main-nav.mobile-active ul {
@@ -128,6 +183,14 @@ nav.main-nav.mobile-active #btn-destinos {
   align-self: center !important;
 }
 
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+  nav.main-nav ul {
+    display: none;
+  }
+}
 /* HEADER  */
 header {
   color: white;
@@ -161,8 +224,7 @@ header .logo {
 header .logo img {
   width: 75px;
   height: 75px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 header nav {
@@ -191,13 +253,22 @@ header nav select {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 0;
   pointer-events: none;
   filter: brightness(0.75);
+  /* Animación de zoom (Efecto Ken Burns) */
+  animation: zoom-banner 4s ease-out forwards;
 }
 
+@keyframes zoom-banner {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.15);
+  }
+}
 .hero-text {
   margin-top: auto;
   max-width: 600px;
@@ -304,7 +375,7 @@ header nav select {
 }
 
 /* Sección destinos - carrusel  */
-.destinos-section {
+.seccion-destinos {
   background-color: #121619;
   color: #e5e5e5;
   padding: 2.5rem 0 3rem;
@@ -312,27 +383,27 @@ header nav select {
   position: relative;
 }
 
-.destinos-section h2 {
+.seccion-destinos h2 {
   margin-bottom: 1.5rem;
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: 1px;
 }
 
-.destinos-carousel {
+.carrusel-destinos {
   max-width: 900px;
   margin: auto;
   overflow: hidden;
   position: relative;
 }
 
-.destinos-carousel-track {
+.carrusel-destinos-pista {
   display: flex;
   gap: 1rem;
   transition: transform 0.4s ease;
 }
 
-.destinos-card {
+.tarjeta-destino {
   flex: 0 0 calc((100% - 2rem) / 3);
   border-radius: 12px;
   overflow: hidden;
@@ -340,27 +411,24 @@ header nav select {
   cursor: pointer;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
   background: #333;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
-.destinos-card img {
+.tarjeta-destino img {
   width: 100%;
   height: 220px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   border-radius: 12px;
   transition: transform 0.3s ease;
   will-change: transform;
 }
 
-.destinos-card:hover img {
+.tarjeta-destino:hover img {
   transform: scale(1.06);
 }
 
-.destinos-card h3 {
+.tarjeta-destino h3 {
   color: white;
   position: absolute;
   top: 50%;
@@ -373,7 +441,7 @@ header nav select {
 }
 
 /* Flechas */
-.carousel-arrow {
+.flecha-carrusel {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -384,23 +452,27 @@ header nav select {
   border-radius: 50%;
   padding: 0.3rem 0.8rem;
   z-index: 10;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   transition: background 0.3s ease;
   border: 2px solid white;
   box-shadow: 0 0 8px rgba(30, 100, 212, 0.7);
 }
 
-.carousel-arrow:hover {
+.flecha-carrusel:hover {
   background: var(--primary-color-dark);
 }
 
-.carousel-arrow.left {
+.flecha-carrusel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #555;
+}
+
+.flecha-carrusel.izquierda {
   left: 10px;
 }
 
-.carousel-arrow.right {
+.flecha-carrusel.derecha {
   right: 10px;
 }
 
@@ -455,8 +527,7 @@ header nav select {
 .tour-card img {
   width: 100%;
   height: 160px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-bottom: 1px solid #ccc;
 }
 
@@ -555,8 +626,7 @@ header nav select {
 .alojamiento-card img {
   width: 100%;
   height: 180px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -568,9 +638,7 @@ header nav select {
   font-weight: 900;
   font-size: 1.1rem;
   text-shadow: 0 0 8px black;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .alojamiento-card:hover {
@@ -921,6 +989,19 @@ nav[aria-label="Paginación de tours"] {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.tours-list.cargando {
+  opacity: 0;
+  /* Se desliza hacia la izquierda al salir */
+  transform: translateX(-40px);
+}
+
+.tours-list.cargando-anterior {
+  opacity: 0;
+  /* Se desliza hacia la derecha al salir */
+  transform: translateX(40px);
 }
 
 .tour-card {
@@ -941,8 +1022,7 @@ nav[aria-label="Paginación de tours"] {
 .tour-card img {
   width: 100%;
   height: 220px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .tour-content {
@@ -1143,6 +1223,11 @@ footer {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease;
+}
+.quienes-somos .image:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 /* MISION - VISION - VALORES */
@@ -1158,6 +1243,11 @@ footer {
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mision-vision article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09);
 }
 .mision-vision article h3 {
   color: #1e64d4;
@@ -1177,7 +1267,6 @@ footer {
 /* COMPROMISO */
 .compromiso {
   margin: 3rem 0;
-  /* Hacer que la tercera tarjeta ocupe la fila completa */
 }
 .compromiso h2 {
   color: #1e64d4;
@@ -1196,7 +1285,6 @@ footer {
   border-radius: 10px;
   min-height: 180px;
   background: #f6f6f6; /* fallback while image loads */
-  /* overlay gradient to improve text contrast */
 }
 .compromiso .cert img {
   position: absolute;
@@ -1205,7 +1293,14 @@ footer {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
   -o-object-fit: cover;
+}
+.compromiso .cert:hover img {
+  transform: scale(1.05);
+}
+.compromiso .cert {
+  /* overlay gradient to improve text contrast */
 }
 .compromiso .cert .cert-title {
   position: absolute;
@@ -1218,6 +1313,9 @@ footer {
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
+}
+.compromiso {
+  /* Hacer que la tercera tarjeta ocupe la fila completa */
 }
 .compromiso .certs .cert:nth-child(3) {
   grid-column: 1/-1;
@@ -1284,17 +1382,6 @@ footer {
   max-width: 1200px;
   margin: auto;
   font-family: "Segoe UI", sans-serif;
-  /* Intro */
-  /* Opciones de personalización */
-  /* Beneficios */
-  /* Proceso */
-  /* Formulario */
-  /* CTA final */
-  /* ---------------------
-     RESPONSIVE
-  --------------------- */
-  /* Tablets */
-  /* Móviles */
 }
 .viajes-medida h2 {
   text-align: center;
@@ -1402,6 +1489,9 @@ footer {
   font-weight: 500;
   color: #1e64d4;
 }
+.viajes-medida {
+  /* Formulario */
+}
 .viajes-medida .formulario {
   margin-bottom: 3rem;
   background: #fff;
@@ -1476,6 +1566,9 @@ footer {
 .viajes-medida .cta-final .btn-cta:hover {
   background: rgb(23.6776859504, 78.9256198347, 167.3223140496);
 }
+.viajes-medida {
+  /* Tablets */
+}
 @media (max-width: 992px) {
   .viajes-medida {
     padding: 1.5rem;
@@ -1523,4 +1616,18 @@ footer {
     width: 100%;
     padding: 1rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+section {
+  margin-bottom: 6rem !important;
+}
+
+.grid {
+  gap: 4rem !important;
+}
+
+footer {
+  margin-top: 6rem !important;
+}
+
+
+/*# sourceMappingURL=main.css.map */

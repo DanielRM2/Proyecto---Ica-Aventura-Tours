@@ -66,8 +66,18 @@ header nav select {
     z-index: 0;
     pointer-events: none;
     filter: brightness(0.75);
+    /* Animación de zoom (Efecto Ken Burns) */
+    animation: zoom-banner 4s ease-out forwards;
 }
 
+@keyframes zoom-banner {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.15);
+    }
+}
 .hero-text {
     margin-top: auto;
     max-width: 600px;

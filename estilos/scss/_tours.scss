@@ -125,6 +125,19 @@ nav[aria-label="Paginación de tours"] {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.tours-list.cargando {
+  opacity: 0;
+  /* Se desliza hacia la izquierda al salir */
+  transform: translateX(-40px);
+}
+
+.tours-list.cargando-anterior {
+  opacity: 0;
+  /* Se desliza hacia la derecha al salir */
+  transform: translateX(40px);
 }
 .tour-card {
   background: v.$light-color;

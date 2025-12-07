@@ -1,3 +1,4 @@
+
 @use 'variables' as v;
 @use 'mixins' as m;
 @use 'global';
@@ -10,3 +11,5 @@
 @use 'footer';
 @use 'nosotros';
 @use 'viajes';
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
