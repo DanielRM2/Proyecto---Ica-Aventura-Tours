@@ -1,0 +1,397 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+/* Sección destinos - carrusel  */
+.seccion-destinos {
+    background-color: v.$background-color;
+    color: #e5e5e5;
+    padding: 2.5rem 0 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.seccion-destinos h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.carrusel-destinos {
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrusel-destinos-pista {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.tarjeta-destino {
+    flex: 0 0 calc((100% - 2rem) / 3);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    background: #333;
+    user-select: none;
+}
+
+.tarjeta-destino img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.tarjeta-destino:hover img {
+    transform: scale(1.06);
+}
+
+.tarjeta-destino h3 {
+    color: v.$light-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-shadow: 0 0 8px black;
+    pointer-events: none;
+}
+
+/* Flechas */
+.flecha-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    background: v.$primary-color-dark;
+    border-radius: 50%;
+    padding: 0.3rem 0.8rem;
+    z-index: 10;
+    user-select: none;
+    transition: background 0.3s ease;
+    border: 2px solid white;
+    box-shadow: 0 0 8px rgb(30 100 212 / 0.7);
+}
+
+.flecha-carrusel:hover {
+    background: var(--primary-color-dark);
+}
+
+.flecha-carrusel:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #555;
+}
+
+.flecha-carrusel.izquierda {
+    left: 10px;
+}
+
+.flecha-carrusel.derecha {
+    right: 10px;
+}
+
+.carousel-indicators {
+    display: none;
+}
+
+/* Tours y paquetes */
+.tours-section {
+    background-color: #f1f6f1;
+    padding: 3rem 1rem;
+    width: 80%;
+    margin: 0 auto 2rem;
+}
+
+.tours-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.tours-header select {
+    padding: 0.3rem 0.7rem;
+    border: 2px solid v.$primary-color;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    background: #fff;
+    color: v.$primary-color;
+}
+
+.tours-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.3rem;
+}
+
+.tour-card {
+    background: white;
+    box-shadow: 0 0 14px #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 1px solid #ccc;
+}
+
+.tour-content {
+    padding: 0.8rem 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tour-content h3 {
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+    color: #061a04;
+}
+
+.tour-subtitle {
+    color: #999;
+    font-size: 0.88rem;
+    margin-bottom: 0.7rem;
+}
+
+.tour-price {
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    color: v.$primary-color;
+}
+
+.tour-price del {
+    color: #999;
+    margin-right: 0.5rem;
+}
+
+.tour-details {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}
+
+.tour-details b {
+    font-weight: 900;
+}
+
+.btn-reserve {
+    background-color: v.$primary-color;
+    color: white;
+    padding: 0.7rem 1.1rem;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-reserve:hover {
+    background-color: v.$primary-color-dark;
+}
+
+/* Alojamiento */
+.alojamiento-section {
+    background-color: #cbe0f1;
+    padding: 2rem 1rem 3rem;
+    width: 100vw;
+    margin: 0 auto 1rem;
+    text-align: center;
+}
+
+.alojamiento-section h2 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #202020;
+}
+
+.alojamiento-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.alojamiento-card {
+    position: relative;
+    width: 320px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    margin-top: 20px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.alojamiento-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.alojamiento-card h3 {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    color: white;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-shadow: 0 0 8px black;
+    user-select: none;
+}
+
+.alojamiento-card:hover {
+    transform: scale(1.05);
+}
+
+/* Sección formulario y mapa */    
+.contact-and-map {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 1rem auto 3rem;
+}
+
+.form-contact {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.12);
+}
+
+.form-contact h2 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #444;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    color: #222;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.55rem 0.8rem;
+    border: 1.8px solid #bbb;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.3rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 320px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@include m.respond-to('tableta') {
+    .contact-and-map {
+        grid-template-columns: 1fr;
+    }
+    #submenu-destinos li a{
+        color: white;
+    }
+    .carousel-arrow{
+        top: 85%;
+        font-size: 1.2rem;
+    }
+    .destinos-carousel{
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+@include m.respond-to('movil') {
+    .destinos-card img {
+        height: 160px;
+    }
+    .destinos-card h3 {
+        font-size: 1.1rem;
+    }
+    .tours-section{
+        width: 100%;
+    }
+    .tours-header{
+        flex-wrap: wrap;
+    }
+    #tituloTours{
+        margin-bottom: 20px;
+    }
+    .tours-list{
+        display: flex;
+        flex-direction: column;   
+        align-items: stretch;      
+        gap: 20px;                
+        padding: 20px;
+    }
+}

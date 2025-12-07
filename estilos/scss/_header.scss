@@ -1,0 +1,149 @@
+@use 'variables' as v;
+
+/* HEADER  */
+header {
+    color: white;
+    padding: 3rem 1rem 4rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+header > *:not(.banner-bg) {
+    position: relative;
+    z-index: 1;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 2.4rem;
+    font-family: v.$font-family;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.7));
+}
+
+header .logo img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+header nav {
+    margin-left: auto;
+    margin-top: 0.2rem;
+    background: rgba(0,0,0,0.3);
+    padding: 0.3rem 1rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+header nav select {
+    background: transparent;
+    border: none;
+    color: rgb(8, 226, 161);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    filter: brightness(0.75);
+    /* Animación de zoom (Efecto Ken Burns) */
+    animation: zoom-banner 4s ease-out forwards;
+}
+
+@keyframes zoom-banner {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.15);
+    }
+}
+.hero-text {
+    margin-top: auto;
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.hero-text p {
+    background: rgba(0,0,0,0.55);
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    max-width: 23rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    background-color: v.$primary-color;
+    color: white;
+    padding: 0.9rem 2rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 7px rgb(30 100 212 / 0.5);
+}
+
+.btn-primary:hover {
+    background-color: v.$primary-color-dark;
+}
+
+
+/* Responsive */
+@media(max-width: 900px) {
+    nav.main-nav ul {
+        display: none;
+    }
+    .hamburger {
+        margin-top: 5px;
+        display: flex;
+    }
+}
+@media (max-width: 600px) {
+    .banner-bg {
+        height: 100%;
+        min-height: 220px;
+    }
+}
+@media(max-width: 500px) {
+    header .logo {
+        font-size: 1.35rem;
+    }
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .hero-text p {
+        max-width: 95%;
+        font-size: 1.05rem;
+    }
+}

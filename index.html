@@ -4,48 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ica Aventura Tours | Agencia de viajes en Ica, Perú</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="https://icatravelperu.com/wp-content/uploads/2021/11/logo-ica-peru-travel.webp">
+    <link rel="stylesheet" href="estilos/css/main.css">
 </head>
 <body>
+<div id="contenido-principal">
 
     <!-- BARRA DE NAVEGACIÓN -->
     <nav class="main-nav" role="navigation" aria-label="Barra de navegación principal">
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Tours</a></li>
-            <li class="destinos" tabindex="0" aria-haspopup="true" aria-expanded="false">
-                <button aria-haspopup="true" aria-controls="submenu-destinos" aria-expanded="false" id="btn-destinos">Destinos ▼</button>
-                <ul id="submenu-destinos" role="menu" aria-label="Submenu destinos">
-                    <li role="none"><a role="menuitem" href="#">Arequipa</a></li>
-                    <li role="none"><a role="menuitem" href="#">Cuzco</a></li>
-                    <li role="none"><a role="menuitem" href="#">Lima</a></li>
-                    <li role="none"><a role="menuitem" href="#">Nazca</a></li>
-                    <li role="none"><a role="menuitem" href="#">Paracas</a></li>
-                    <li role="none"><a role="menuitem" href="#">Puno</a></li>
-                    <li role="none"><a role="menuitem" href="#">Ica</a></li>
-                </ul>
-            </li>
-             <li><a href="#">Viajes a medida</a></li>
-            <li><a href="#">Nosotros</a></li>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="destinos.html">Destinos</a></li>
+            <li><a href="viajes.html">Viajes a medida</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
         </ul>
-        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
-            &#9776
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+            <i class="fas fa-bars"></i>
         </button>
     </nav>
 
     <header>
+        <img class="banner-bg" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80" alt="Banner principal" />
         <div class="logo">
             <img src="https://icatravelperu.com/wp-content/uploads/2021/11/logo-ica-peru-travel.webp" alt="Paracas Explorer Logo" />
             ICA AVENTURA TOURS S.A.C
         </div>
-        <nav>
+
+        <div class="header-lang-select">
             <select aria-label="Seleccione idioma">
                 <option selected>Español</option>
                 <option>English</option>
                 <option>Português</option>
             </select>
-        </nav>
+        </div>
 
         <div class="hero-text">
             <h1>Descubre Perú</h1>
@@ -55,47 +47,57 @@
     </header>
 
     <!-- Sección Destinos -->
-    <section class="destinos-section">
+    <section class="seccion-destinos seccion-aparecer">
         <h2><i class="fas fa-map-marker-alt"></i> Nuestros Destinos</h2>
-        <div class="destinos-carousel" aria-label="Carrusel de destinos">
-            <button class="carousel-arrow left" aria-label="Anterior Destino">&#10094;</button>
-            <div class="destinos-carousel-track" role="list">
-                <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Paracas">
+        <div class="carrusel-destinos" aria-label="Carrusel de destinos">
+            <button class="flecha-carrusel izquierda" aria-label="Anterior Destino">&#10094;</button>
+            <div class="carrusel-destinos-pista" role="list">
+                <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Paracas">
                     <img src="https://atoqhoteles.com/wp-content/uploads/2025/04/atoq-hoteles-blog-explore-paracas-playa-de-la-mina.png" alt="Paracas" />
                     <h3>Paracas</h3>
                 </div>
-                <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Lima">
+                <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Lima">
                     <img src="https://www.caminosalkantay.com/blog/wp-content/uploads/2024/11/miraflores-lima-city-in-front-the-ocean-1024x767-1.jpg" alt="Lima"/>
                     <h3>Lima</h3>
                 </div>
-                <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Ica">
+                <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Ica">
                     <img src="https://www.peru.travel/Contenido/Destino/Imagen/es/5/1.2/Principal/SouthAmericaPeru2017_1010_180704-5912_AGP_HDR-_2_-_1_.home%20_7_.jpg" alt="Ica" />
                     <h3>Ica</h3>
                 </div>
-                <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Arequipa">
+                <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Arequipa">
                     <img src="https://www.viajespeedy.com/wp-content/uploads/2024/08/city-tour-arequipa-1.jpg" alt="Arequipa" />
                     <h3>Arequipa</h3>
                 </div>
-                <div class="destinos-card" role="listitem" tabindex="0" aria-label="Destino Nazca">
+                <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Nazca">
                     <img src="https://files.pucp.education/puntoedu/wp-content/uploads/2025/06/04172152/web-1920x1080-lineas-de-nazca.jpg" alt="Nazca" />
                     <h3>Nazca</h3>
                 </div>
+                    <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Cusco">
+                        <img src="https://www.travelandes.com/img/GalleryContent/111791/cusco1.jpg" alt="Cusco" />
+                        <h3>Cusco</h3>
+                    </div>
+                    <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Puno">
+                        <img src="https://peru.info/archivos/publicacion/120-imagen-179561372018.jpg" alt="Puno" />
+                        <h3>Puno</h3>
+                    </div>
+                    <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Trujillo">
+                        <img src="https://denomades-blog.imgix.net/blog/wp-content/uploads/2020/09/19163849/shutterstock_217920055-1.jpg?auto=compress%2Cformat&ixlib=php-3.3.1" alt="Trujillo" />
+                        <h3>Trujillo</h3>
+                    </div>
+                    <div class="tarjeta-destino" role="listitem" tabindex="0" aria-label="Destino Piura">
+                        <img src="https://www.turiweb.pe/wp-content/uploads/2020/10/piura-playa-201020.jpg" alt="Piura" />
+                        <h3>Piura</h3>
+                    </div>
             </div>
-            <button class="carousel-arrow right" aria-label="Siguiente Destino">&#10095;</button>
+            <button class="flecha-carrusel derecha" aria-label="Siguiente Destino">&#10095;</button>
         </div>
     </section>
 
     <!-- Tours y Paquetes -->
-    <section class="tours-section container" aria-label="Tours y Paquetes">
+    <section class="tours-section container seccion-aparecer" aria-label="Tours y Paquetes">
         <div class="tours-header">
             <span id="tituloTours">🗺️ Tours y Paquetes</span>
-            <select aria-label="Filtrar tours">
-                <option value="todos" selected>Todos</option>
-                <option value="paracas">Paracas</option>
-                <option value="ica">Ica</option>
-                <option value="cusco">Cusco</option>
-            </select>
-            <a href="#" style="color:var(--primary-color); font-weight:700; padding-left:0.5rem;">/ Ver todos</a>
+            <a href="tours.html" style="color:var(--primary-color); font-weight:700; padding-left:0.5rem;">/ Ver todos</a>
         </div>
         <div class="tours-list">
 
@@ -173,20 +175,22 @@
                 </div>
             </article>
 
-            <article class="tour-card" aria-label="Tour Huacachina y Dunas">
-                <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/ae/2b/13.jpg" alt="Tour Huacachina" />
-                <div class="tour-content">
-                    <h3>Tour Huacachina y Dunas</h3>
-                    <div class="tour-subtitle">Ica - Huacachina</div>
-                    <div class="tour-price">Desde: <strong>$55.00</strong></div>
-                    <div class="tour-details">
-                        Duración: <b>4 horas</b><br />
-                        Nivel de actividad: <b>Media</b><br />
-                        Tamaño del Grupo: <b>Mediano</b>
-                    </div>
-                    <button class="btn-reserve" type="button">Reserve ahora</button>
-                </div>
-            </article>
+    <article class="tour-card" aria-label="Tour Huacachina y Dunas">
+  <img src="https://www.incatrilogytours.com/wp-content/uploads/2025/05/huacachina-sunset-con-buggies-9-x-6.jpg" 
+       alt="Tour Huacachina y Dunas" />
+  <div class="tour-content">
+    <h3>Tour Huacachina y Dunas</h3>    
+    <div class="tour-subtitle">Ica - Huacachina</div>
+    <div class="tour-price">Desde: <strong>$55.00</strong></div>
+    <div class="tour-details">
+      Duración: <b>4 horas</b><br />
+      Nivel de actividad: <b>Media</b><br />
+      Tamaño del Grupo: <b>Mediano</b>
+    </div>
+    <button class="btn-reserve" type="button">Reserve ahora</button>
+  </div>
+</article>
+
 
             <article class="tour-card" aria-label="Tour Lima Histórico y Cultural">
                 <img src="https://venttourperu.com/wp-content/uploads/2023/12/city-tour-lima7.jpg" alt="Tour Lima Histórico" />
@@ -234,15 +238,10 @@
             </article>
 
         </div>
-        <nav aria-label="Paginación de tours" style="text-align:center; margin-top:1.2rem;">
-            Página 1 de 11 
-            <a href="#" style="font-weight:bold; margin-left:6px; margin-right:6px; color:var(--primary-color);">1</a>
-            <a href="#">2</a> <a href="#">3</a> &gt;&gt;
-        </nav>
     </section>
 
     <!-- Alojamiento -->
-    <section class="alojamiento-section container" aria-label="Alojamiento en Ica">
+    <section class="alojamiento-section container seccion-aparecer" aria-label="Alojamiento en Ica">
         <h2>Alojamiento en Ica</h2>
         <div class="alojamiento-cards">
             <div class="alojamiento-card" tabindex="0" aria-label="Hotel Los Frayles">
@@ -261,7 +260,7 @@
     </section>
 
     <!-- Formulario y Mapa -->
-    <section class="contact-and-map container">
+    <section class="contact-and-map container seccion-aparecer">
         <form class="form-contact" aria-label="Formulario de contacto" action="#" method="post">
             <h2>¿Cómo podemos ayudarte?</h2>
             <div class="form-group">
@@ -382,8 +381,10 @@
             Este sitio está protegido por reCAPTCHA y se aplican la <a href="#">Política de Privacidad</a> y los <a href="#">Términos de Servicio</a> de Google.
         </div>
     </footer>
+</div>
 
-    <script src="script.js"></script>
+    <script src="funciones/script.js"></script>
+    <script src="funciones/animations.js"></script>
 
 </body>
 </html>

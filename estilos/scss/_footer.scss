@@ -1,0 +1,118 @@
+@use 'variables' as v;
+
+footer{
+background-color: v.$background-color;
+padding: 30px 15px 15px 15px;
+color: white;
+font-size: 0.9rem;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap: 1.8rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: v.$primary-color;
+}
+
+.lang-select-footer button {
+    background: none;
+    border: 1px solid #bbb;
+    border-radius: 20px;
+    padding: 0.4rem 1.1rem;
+    color: #bbb;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-select-footer button:hover {
+    background: v.$primary-color;
+    border-color: #618d28;
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0.5rem 0 1rem;
+}
+
+.social-icons a {
+    display: flex;
+    background: #444;
+    color: white;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.social-icons a:hover {
+    background: v.$primary-color;
+    color: #1e4412;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+.footer-info div {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.footer-info svg {
+    width: 16px;
+    height: 16px;
+    fill: v.$primary-color;
+}
+
+.legal-text {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    color: #555;
+}
+
+.legal-text a {
+    color: v.$primary-color;
+    text-decoration: underline;
+}
