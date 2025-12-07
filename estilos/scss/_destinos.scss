@@ -1,0 +1,92 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+/* Destinos */
+.destinos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.destino-card {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.destino-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.destino-image {
+  width: 100%;
+  padding-top: 60%; 
+  background-size: cover;
+  background-position: center;
+}
+
+@include m.respond-to('tableta') {
+  .destinos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 2rem auto;
+    padding: 0 0.5rem;
+  }
+}
+
+@include m.respond-to('movil') {
+  .destinos-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin: 1.2rem auto;
+    padding: 0 0.2rem;
+  }
+}
+
+.destino-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* empuja botón hacia abajo */
+  padding: 1rem;
+  min-height: 200px; /* asegura altura homogénea */
+}
+
+.destino-content h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.destino-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  flex-grow: 1; /* ocupa espacio para empujar el botón */
+}
+
+/* Botones */
+.btn-destino {
+  display: inline-block;
+  text-align: center;
+  padding: 0.7rem 1.2rem;
+  background-color: v.$primary-color;
+  color: #fff !important; /* letras siempre blancas */
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-destino:hover {
+  background-color: #003366; 
+  transform: translateY(-2px);
+}
